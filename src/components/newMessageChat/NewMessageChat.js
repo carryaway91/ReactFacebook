@@ -46,7 +46,8 @@ const Container = styled.div`
     height: 452px;
     background: white;
     border-radius: .3rem;
-    box-shadow: 0 1px 4px 0px lightgray
+    box-shadow: 0 1px 4px 0px lightgray;
+    z-index: 101
 `
 
 const MyMessage = styled.div`

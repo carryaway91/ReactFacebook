@@ -6,10 +6,22 @@ import AsideNav from '../../components/asideNav/AsideNav';
 import Contacts from '../../components/contacts/Contacts';
 import Home from '../home/Home';
 import Stories from '../Stories/Stories';
-import { ChatContext } from '../../context/ChatContext'
-import NewMessageChat from '../../components/newMessageChat/NewMessageChat';
+import UserContextWindow from '../../components/userContextWindow/UserContextWindow';
 
 const Dashboard = props => {
+    const [userContext, setUserContext] = useState(false)
+    const [top, setTop] = useState(0)
+
+
+    const handleShowUserContext = top => {
+        if(top < 75) {
+            setTop(10)
+        } else {
+            setTop(top - 90)
+        }
+        setUserContext(true)
+    }
+
 
     return (
         <div style={{ display: 'flex', height: 'calc(90.5vh)', overflowY: 'hidden', background: '#f0f2f5', position: 'relative'}}>
@@ -24,11 +36,15 @@ const Dashboard = props => {
                 </Switch>
             </Main>
 
-            <RightPanel>
-                <AdPanel />
-                <Contacts open={props.open} />
-            </RightPanel>
-
+            <div style={{ position: 'relative', flex: 1.4 }}>
+                <RightPanel>
+                    <AdPanel />
+                    <Contacts open={props.open} show={handleShowUserContext} hide={() => setUserContext(false)}/>
+                </RightPanel>
+                {
+                    userContext &&  <UserContextWindow show={() => setUserContext(true)} hide={() => setUserContext(false)} top={top}/>
+                }
+            </div>
         </div>
     );
 };
@@ -50,16 +66,15 @@ const LeftPanel = styled.div`
 `
 const RightPanel = styled.div`
     padding: 0 .45rem;
-    flex: 1.4;
     height: 100vh;
-    overflow: hidden;
-    scroll: hidden;
-    overflow-x: hidden;
     height: 100vh;
-
+    overflow-y: scroll;
+    
+    ::webkit-scroll {
+        display: none
+    }
     &:hover {
-        overflow-y: scroll;
-        scroll: auto
+        overflow-x: visible;
         }
     }
 
