@@ -6,7 +6,7 @@ const Messages = props => {
     const [showSearch, setShowSearch] = useState(true)
 
     return (
-        <div>
+        <div style={{ width: '100%'}}>
             <div style={{ padding: '1rem 1rem 0 1rem'}}>
                 <h2 style={{ margin: '0 0 1rem 0'}}>Messenger</h2>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems:'center'}}>

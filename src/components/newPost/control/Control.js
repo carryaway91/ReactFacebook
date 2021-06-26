@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const Control = props => {
     return (
-        <Container>
+        <Container onClick={props.clicked} onMouseEnter={props.over}>
             { props.children }
             <Title>{props.title}</Title>
         </Container>

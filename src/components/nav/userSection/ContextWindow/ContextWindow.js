@@ -8,7 +8,7 @@ const ContextWindow = props => {
     return (
         <Context onClick={(e) => clicked(e)} id="context">
             { props.children }
-            <div onClick={props.open}>
+            <div onClick={props.open} style={{ width: '100%'}}>
             { props.data}
             </div>
         </Context>

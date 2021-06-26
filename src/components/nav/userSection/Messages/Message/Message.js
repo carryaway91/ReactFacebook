@@ -10,7 +10,7 @@ const Message = props => {
     
     return (
         <InfoContainer >
-            <div style={{ display: 'flex' }} onClick={() => showChat()}>
+            <div style={{ display: 'flex', width: '100%' }} onClick={() => showChat()}>
                 <UserCircle w="60px" photo={Photo}/>
                 <div style={{ marginLeft: '.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
                     <h4 style={{ margin: 0}}>Contact</h4>

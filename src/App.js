@@ -55,6 +55,7 @@ const handleHideOverlay = () => {
 
   return (
     <Content>
+      <div style={{ width: '100%', height: '57px'}} />
         <ChatContext.Provider value={{
             showChat: handleOpenChat,
         }}>
@@ -96,6 +97,6 @@ bottom: 0;
 right: 0;
 background: white;
 opacity: .7;
-z-index: 90
+z-index: 99
 `
 export default App;

@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import PostContainer from '../../UI/postContainer/PostContainer';
+import CommentSection from '../commentSection/CommentSection';
+import FullLike from '../interactionPanel/icons/FullLike';
+import Heart from '../interactionPanel/icons/Heart';
+import Laugh from '../interactionPanel/icons/Laugh';
 import InteractionPanel from '../interactionPanel/InteractionPanel';
 import World from './WorldSvg'
 
 const Post = props => {
+    const [commentSection, setCommentSection] = useState(false)
+    const [emoji, setEmoji] = useState('')
 
     return (
         <div style={{ marginTop: '1rem', display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center'}}>
@@ -30,7 +36,28 @@ const Post = props => {
                         <Image src="https://images.unsplash.com/photo-1612151855475-877969f4a6cc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aGQlMjBpbWFnZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80" />
                     }
                 </InnerContainer>
-                <InteractionPanel />
+                {
+                    emoji && (
+                        <div style={{ marginBottom: '.2rem', paddingBottom: '.5rem', borderBottom: '1px solid lightgray'}}>
+                            {
+                                emoji == '' && null
+                            }
+                            { 
+                                emoji == 'fullLike' && ( <div style={{ display: 'flex', alignItems:'center'}}><FullLike w="20" /> &nbsp;Peter Babej </div> )
+                            }
+                            { 
+                                emoji == 'heart' && ( <div style={{ display: 'flex', alignItems:'center'}}><Heart w="20" /> &nbsp;Peter Babej </div> )
+                            }
+                            { 
+                                emoji == 'laugh' && ( <div style={{ display: 'flex', alignItems:'center'}}><Laugh w="20" /> &nbsp;Peter Babej </div> )
+                            }
+                        </div>
+                    )
+                }
+                <InteractionPanel clicked={() => setCommentSection(!commentSection) } emoji={(e) => setEmoji(e)}/>
+                {
+                    commentSection && <CommentSection />
+                }
             </PostContainer>
 
         </div>

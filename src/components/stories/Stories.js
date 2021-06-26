@@ -4,7 +4,7 @@ import Photo from '../../img/ja.jpg'
 
 const Stories = () => {
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '1rem'}}>
+        <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '1rem', paddingRight: '.7rem'}}>
             <Story photo={Photo} main={true} />
             
             {

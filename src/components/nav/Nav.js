@@ -18,6 +18,10 @@ const Nav = props => {
 
 const Navigation = styled.nav`
     display: flex;
+    background: #fff;
+    z-index: 98;
+    position: fixed;
+    width: 100%;
     flex: 1;
     justify-content: space-between;
     border-bottom: 1px solid #e2e1e1;

@@ -67,14 +67,14 @@ const LeftPanel = styled.div`
 const RightPanel = styled.div`
     padding: 0 .45rem;
     height: 100vh;
-    height: 100vh;
     overflow-y: scroll;
     
-    ::webkit-scroll {
-        display: none
+    ::-webkit-scrollbar {
+        display: none;
     }
     &:hover {
         overflow-x: visible;
+       
         }
     }
 
