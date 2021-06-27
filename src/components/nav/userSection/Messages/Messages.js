@@ -6,7 +6,7 @@ const Messages = props => {
     const [showSearch, setShowSearch] = useState(true)
 
     return (
-        <div style={{ width: '100%'}}>
+        <div>
             <div style={{ padding: '1rem 1rem 0 1rem'}}>
                 <h2 style={{ margin: '0 0 1rem 0'}}>Messenger</h2>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems:'center'}}>
@@ -18,14 +18,9 @@ const Messages = props => {
                 </div>
             </div>
             <div style={{ padding: '.5rem'}}>
-                <Message />
-                <Message />
-                <Message />
-                <Message />
-                <Message />
-                <Message />
-                <Message />
-                <Message />
+                {
+                   props.friends && props.friends.map(f => <Message friend={f} />)
+                }
 
             </div>
         </div>

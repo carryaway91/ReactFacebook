@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import styled from 'styled-components'
 import Emojies from '../emojies/Emojies'
+import ShareContext from '../shareContext/ShareContext'
 import Button from './Button'
 import Comment from './icons/Comment'
 import FullLike from './icons/FullLike'
@@ -12,7 +13,8 @@ import Share from './icons/Share'
 
 const InteractionPanel = props => {
     const [emojiPanel, setShowEmojiPanel] = useState(false)
-    const [chosenEmoji, setChosenEmoji] = useState('')
+    const [chosenEmoji, setChosenEmoji] = useState('like')
+    const [shareContext, setShareContext] = useState(false)
 
     const handleChosenEmoji = e => {
         setChosenEmoji(e)
@@ -25,6 +27,12 @@ const InteractionPanel = props => {
             setChosenEmoji('fullLike')
         }
     }
+
+    const triggerShare = e => {
+        setShareContext(!shareContext)
+        e.stopPropagation()
+    }
+
 
     let currentEmoji = <Like />
     let eColor = 'black'
@@ -66,8 +74,9 @@ const InteractionPanel = props => {
             <Button title="Comment" clicked={props.clicked}>
                 <Comment />
             </Button>
-            <Button title="Share">
+            <Button title="Share" clicked={(e) => triggerShare(e)}>
                 <Share />
+                { shareContext && <ShareContext /> }
             </Button>
         </div>
     )

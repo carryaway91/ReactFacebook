@@ -1,21 +1,38 @@
+import { useState, useEffect } from 'react'
+import { useParams } from "react-router-dom"
 import styled from "styled-components";
 import Photo from '../../img/ja.jpg'
 import PostContainer from "../../UI/postContainer/PostContainer";
 import Teta from '../../img/teta.jpg'
 import NewPost from "../../components/newPost/NewPost";
 import Post from "../../components/post/Post";
+import { data } from '../../api/api'
 
+const Profile = props => {
+    const { slug } = useParams()
+    const [currentUser, setCurrentUser] = useState()
 
-const Profile = () => {
+    useEffect(() => {
+        let profile = {}
+        let isUser = data.user.slug == slug
+
+        if(!isUser) {
+           profile = data.user.friends.find(f => f.slug == slug)
+           setCurrentUser(profile)
+        } else {
+            setCurrentUser(data.user)
+        }
+    }, [slug])
+
     return (
         <div style={{ width: '100%'}}>
-
+            
             <div style={{ width: '100%', background: 'white', borderBottom: '1px solid lightgray'}}>
                 <Header>
                     <Cover>
-                        <ProfileCircle src={Photo} />
+                        <ProfileCircle src={currentUser && currentUser.photo} />
                     </Cover>
-                    <h1>Peter Babej</h1>
+                    <h1>{ currentUser && currentUser.fName + ' ' + currentUser.lName }</h1>
                 </Header>
             </div>
             <div style={{ width: '100%', background: '#f0f2f5', padding: '1rem 0'}}>

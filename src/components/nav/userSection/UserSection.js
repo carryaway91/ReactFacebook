@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
-import Photo from '../../../img/ja.jpg'
 import Button from './Button/Button'
 import ContextWindow from './ContextWindow/ContextWindow'
 import Messages from './Messages/Messages'
@@ -17,10 +16,6 @@ const UserSection = props => {
             setHideWindow(true)
         })
     },[])
-    const handleActivateButton = type => {
-        setActiveIcon(type)
-        setHideWindow(false)
-    }
 
     // status je hodna ikonky ci je aktivna alebo nie
     const handleTriggerWindow = (status, type) => {
@@ -36,11 +31,11 @@ const UserSection = props => {
     return (
         <Nav>
             <UserIcon>
-                <NavLink to="/profile" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', padding: '.2rem .7rem .2rem .2rem', borderRadius: '2rem' }}
+                <NavLink to={`/profile/peter-babej`} style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', padding: '.2rem .7rem .2rem .2rem', borderRadius: '2rem' }}
                 activeStyle={{ background: 'lightblue'}}
                 >
-                    <img src={Photo} width="35px" style={{ borderRadius: '50%'}} />
-                    <strong style={{ marginLeft: '.5rem', color: '#000' }}>Peter</strong>
+                    <img src={ props.user && props.user.photo} width="35px" style={{ borderRadius: '50%'}} />
+                    <strong style={{ marginLeft: '.5rem', color: '#000' }}>{ props.user && props.user.fName}</strong>
                 </NavLink>
             </UserIcon>
             <NavItem>
@@ -58,7 +53,7 @@ const UserSection = props => {
             </NavItem>
             {
                 !hideWindow && <ContextWindow
-                    data={activeIcon == 'messages' ? <Messages/>
+                    data={activeIcon == 'messages' ? <Messages friends={ props.user && props.user.friends}/>
                     :
                     activeIcon == 'notifications' ? <Notifications /> : null
                 }/>

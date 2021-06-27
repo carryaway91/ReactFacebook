@@ -11,22 +11,23 @@ import UserContextWindow from '../../components/userContextWindow/UserContextWin
 const Dashboard = props => {
     const [userContext, setUserContext] = useState(false)
     const [top, setTop] = useState(0)
+    const [userData, setUserData] = useState()
 
-
-    const handleShowUserContext = top => {
+    const handleShowUserContext = (top, user) => {
         if(top < 75) {
             setTop(10)
         } else {
             setTop(top - 90)
         }
         setUserContext(true)
+        setUserData(user)
     }
 
 
     return (
         <div style={{ display: 'flex', height: 'calc(90.5vh)', overflowY: 'hidden', background: '#f0f2f5', position: 'relative'}}>
             <LeftPanel>
-                <AsideNav />
+                <AsideNav user={props.user} />
             </LeftPanel>
 
             <Main>
@@ -39,10 +40,10 @@ const Dashboard = props => {
             <div style={{ position: 'relative', flex: 1.4 }}>
                 <RightPanel>
                     <AdPanel />
-                    <Contacts open={props.open} show={handleShowUserContext} hide={() => setUserContext(false)}/>
+                    <Contacts friends={ props.user && props.user.friends} open={props.open} show={handleShowUserContext} hide={() => setUserContext(false)}/>
                 </RightPanel>
                 {
-                    userContext &&  <UserContextWindow show={() => setUserContext(true)} hide={() => setUserContext(false)} top={top}/>
+                    userContext &&  <UserContextWindow user={userData} show={() => setUserContext(true)} hide={() => setUserContext(false)} top={top}/>
                 }
             </div>
         </div>

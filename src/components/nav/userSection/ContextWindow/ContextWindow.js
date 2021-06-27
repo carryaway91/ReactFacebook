@@ -17,7 +17,7 @@ const ContextWindow = props => {
 
 const Context = styled.div`
     width: 360px;
-    height: 550px;
+    height: 85vh;
     position: absolute;
     top: 60px;
     right: 10px;

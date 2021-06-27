@@ -2,7 +2,6 @@ import { useState } from 'react'
 import styled from "styled-components"
 import UserCircle from '../userCircle/UserCircle'
 import Link from "./Link/Link"
-import Photo from '../../img/ja.jpg'
 import Covid from './icons/covid.png'
 import Friends from './icons/friends.png'
 import Group from './icons/group.png'
@@ -13,15 +12,15 @@ import Down from './icons/Down'
 import Shortcut from './icons/shortcut.png'
 import More from './icons/more.png'
 
-const AsideNav = () => {
+const AsideNav = props => {
     const [showMore, setShowMore] = useState(false)
     
 
     return (
         <Menu>
-            <Link to="/profile">
-                <UserCircle w="30px" photo={Photo} />
-                <span style={{ marginLeft: '.5rem'}}>Peter Babej</span>
+            <Link to={props.user && `/profile/${props.user.slug}`}>
+                <UserCircle w="30px" photo={ props.user && props.user.photo} />
+                <span style={{ marginLeft: '.5rem'}}>{ props.user && props.user.fName + ' ' + props.user.lName }</span>
             </Link>
             <Link>
                 <img src={Covid} width="25px" />

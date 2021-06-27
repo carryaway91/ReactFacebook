@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Photo from '../../img/teta.jpg'
 import UserCircle from "../userCircle/UserCircle";
@@ -7,9 +8,10 @@ const UserContextWindow = props => {
         <PostContainer onMouseEnter={props.show} onMouseLeave={props.hide} style={{ top: props.top}}>
             <UserCircle w="90px" photo={Photo} />
             <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', marginLeft: '.5rem'}}>
-                <h2 style={{ margin: '0 0 .2rem 0'}}>Contact</h2>
-                <p style={{ margin: 0}}>Works at a cool place</p>
-                <p style={{ margin: 0}}>Studied on a university</p>
+                <h2 style={{ margin: '0 0 .2rem 0'}}>
+                    <Link to={ props.user && `/profile/${props.user.slug}`} style={{ color: 'black', textDecoration: 'none'}}>{ props.user.fName + ' ' + props.user.lName }</Link></h2>
+                <p style={{ margin: 0}}>{ props.user.work }</p>
+                <p style={{ margin: 0}}>Studied at { props.user.school }</p>
             </div>
         </PostContainer>
     );

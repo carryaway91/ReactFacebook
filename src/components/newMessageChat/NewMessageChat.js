@@ -8,7 +8,7 @@ const NewMessageChat = props => {
                 <div style={{display: 'flex'}}>
                     <UserCircle w="35px" photo={Photo} />
                     <div style={{ marginLeft: '.5rem'}}>
-                        <h4 style={{margin: 0}}>Contact</h4>
+                        <h4 style={{margin: 0}}>{ props.friend && props.friend.fName + ' ' + props.friend.lName }</h4>
                         <p style={{ margin: 0, fontSize: '.7rem'}}>Active now</p>
                     </div>
                 </div>
@@ -19,14 +19,14 @@ const NewMessageChat = props => {
 
                 <div style={{ overflowY: 'scroll', padding: '0 .5rem', height: '340px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end'}}>
                     <MyMessage>
-                        My message for the Contact
+                        My message for { props.friend && props.friend.fName + ' ' + props.friend.lName }
                     </MyMessage>
                     <div style={{ display: 'flex', marginTop: '.5rem' }}>
                         <div style={{ display: 'flex', alignItems: 'flex-end', marginRight: '.2rem' }}>
                             <UserCircle w="25px" photo={Photo} />
                         </div>
                         <ContactMessage>
-                            Message from Contact to me
+                            Message from { props.friend && props.friend.fName + ' ' + props.friend.lName } to me
                         </ContactMessage>
                     </div>
                 </div>

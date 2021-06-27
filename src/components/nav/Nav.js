@@ -11,7 +11,7 @@ const Nav = props => {
             </div>
 
             <General />
-            <UserSection />
+            <UserSection user={props.user} />
         </Navigation>
     )
 }

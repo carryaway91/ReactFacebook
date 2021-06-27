@@ -13,9 +13,17 @@ import NewMessageChat from './components/newMessageChat/NewMessageChat';
 import Stories from './containers/Stories/Stories';
 import Dashboard from './containers/Dashboard/Dashboard';
 import Profile from './containers/Profile/Profile';
-
+import { data } from './api/api'
 
   const App = () => {
+    const [user, setUser] = useState()
+    const [friend, setFriend] = useState()
+    const [showChat, setShowChat] = useState(false)
+    const [showLayout, setShowLayout] = useState(false)
+
+    useEffect(() => {
+      setUser(data.user)
+    }, [])
 
     useEffect(() => {
       document.addEventListener('click', (e) => {
@@ -28,10 +36,6 @@ import Profile from './containers/Profile/Profile';
 
         })
     }, [document.getElementById('context')])
-
-  const [showChat, setShowChat] = useState(false)
-  const [showLayout, setShowLayout] = useState(false)
-
   // overlay pri novom poste
   const handleShowOverlay = () => {
     setShowLayout(true)
@@ -47,10 +51,13 @@ const handleHideOverlay = () => {
     window.style.display = "none"
   }
 
-  const handleOpenChat = () => {
+  const handleOpenChat = friend => {
     setShowChat(true)
+    setFriend(friend)
     let window = document.getElementById('context')
-    window.style.display = 'none'
+    if(window) {
+      window.style.display = 'none'
+    }
   }
 
   return (
@@ -59,7 +66,7 @@ const handleHideOverlay = () => {
         <ChatContext.Provider value={{
             showChat: handleOpenChat,
         }}>
-            <Nav />
+            <Nav user={user} />
         </ChatContext.Provider>
 
         <LayoutContext.Provider value={{
@@ -68,14 +75,14 @@ const handleHideOverlay = () => {
           layoutStatus: showLayout
         }}>
             <Switch>
-                <Route path="/profile" exact render={() => <Profile />} />
-                <Route path="/*" render={() => <Dashboard open={() => setShowChat(true)}/>} />
+                <Route path="/profile/:slug" exact render={() => <Profile />} />
+                <Route path="/*" render={() => <Dashboard user={user} open={handleOpenChat}/>} />
             </Switch>
         </LayoutContext.Provider> 
         {
             showLayout && <Layout onClick={() => setShowLayout(false)} />
         }
-        { showChat && <NewMessageChat close={() => setShowChat(false)} /> }
+        { showChat && <NewMessageChat friend={friend} close={() => setShowChat(false)} /> }
 
 
     </Content>
