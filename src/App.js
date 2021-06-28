@@ -63,17 +63,17 @@ const handleHideOverlay = () => {
   return (
     <Content>
       <div style={{ width: '100%', height: '57px'}} />
+      <LayoutContext.Provider value={{
+        showOverlay: handleShowOverlay,
+        hideOverlay: handleHideOverlay,
+        layoutStatus: showLayout
+      }}>
         <ChatContext.Provider value={{
             showChat: handleOpenChat,
         }}>
             <Nav user={user} />
         </ChatContext.Provider>
 
-        <LayoutContext.Provider value={{
-          showOverlay: handleShowOverlay,
-          hideOverlay: handleHideOverlay,
-          layoutStatus: showLayout
-        }}>
             <Switch>
                 <Route path="/profile/:slug" exact render={() => <Profile />} />
                 <Route path="/*" render={() => <Dashboard user={user} open={handleOpenChat}/>} />

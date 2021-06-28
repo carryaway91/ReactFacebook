@@ -1,5 +1,9 @@
 import UserPhoto from '../img/ja.jpg'
 import Livia from '../img/teta.jpg'
+import Mountains from '../img/stories/mountains.jpg'
+import Lake from '../img/stories/lake.jpg'
+import Mlyn from '../img/stories/mlyn.jpg'
+import Sakura from '../img/stories/sakura.jpg'
 
 export const data = {
     user: {
@@ -29,7 +33,11 @@ export const data = {
                     text: 'This is my first post as Livia Mala',
                     photo: '',
                 }],
-                friends: []
+                friends: [],
+                story: {
+                    id: 1,
+                    story: Mountains
+                }
             },
             {
                 slug: 'aneta-nova',
@@ -44,7 +52,9 @@ export const data = {
                     text: 'This is my first post as Livia Velka',
                     photo: '',
                 }],
-                friends: []
+                friends: [],
+                story: {id: 2, story: Sakura}
+
             },
             {
                 slug: 'anna-zahunanska',
@@ -59,7 +69,8 @@ export const data = {
                     text: 'This is my first post as Livia Stredna',
                     photo: '',
                 }],
-                friends: []
+                friends: [],
+                story: {id: 45, story: Mlyn}
             },
             {
                 slug: 'katka-anrejska',
@@ -74,7 +85,8 @@ export const data = {
                     text: 'This is my first post as Livia Stredna',
                     photo: '',
                 }],
-                friends: []
+                friends: [],
+                story: {id: 3, story: Lake}
             },
             {
                 slug: 'lucia-malackova',

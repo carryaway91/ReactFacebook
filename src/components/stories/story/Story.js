@@ -4,7 +4,7 @@ import styled from "styled-components"
 const Story = props => {
     return (
         <Container>
-            <Link to="/story">
+            <Link to={`/story/${props.story && props.story.story.id}`}>
             { props.children }
             {
                 props.photo 
@@ -12,7 +12,7 @@ const Story = props => {
                 ? 
                 <Img src={props.photo}/> 
                 :
-                <Img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png"  /> 
+                <Img src={props.story.story.story}  /> 
             }
             
             {

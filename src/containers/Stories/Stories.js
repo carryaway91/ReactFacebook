@@ -1,15 +1,31 @@
 import styled, { keyframes } from "styled-components";
 import LeftStoryPanel from "../../components/LeftStoryPanel/LeftStoryPanel"
+import { useState, useEffect } from "react";
+import { data } from '../../api/api'
+import { useParams } from 'react-router-dom'
 
 
 const Stories = () => {
+    const { id } = useParams()
+
+    const [friendsWithStories, setFriendsWithStories] = useState()
+    const [userWithStory, setUserWithStory] = useState()
+
+    useEffect(() => {
+        let friends = data.user.friends.filter(f => f.story)
+        let user = friends.filter(s => s.story.id == id)
+        
+        setFriendsWithStories(friends)
+        setUserWithStory(user[0])
+    },[id])
+
 
     return (
         <Container>
-            <LeftStoryPanel />
+            <LeftStoryPanel friends={friendsWithStories && friendsWithStories} />
             <RightPanel>
                 <Story>
-                    <Img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png" />
+                    <Img src={userWithStory && userWithStory.story.story} />
                 </Story>
             </RightPanel>
         </Container>

@@ -1,16 +1,25 @@
 import UserStoryIcon from '../userStoryIcon/UserStoryIcon'
 import Story from './story/Story'
 import Photo from '../../img/ja.jpg'
+import { useState, useEffect } from 'react'
+import { data } from '../../api/api'
 
-const Stories = () => {
+const Stories = props => {
+    const [usersWithStories, setUsersWithStories] = useState()
+
+    useEffect(() => {
+        let stories = []
+        stories = data.user.friends.filter(f => f.story)
+        setUsersWithStories(stories)
+    }, [])
+
     return (
         <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '1rem', paddingRight: '.7rem'}}>
             <Story photo={Photo} main={true} />
-            
             {
-                [...Array(4)].map(s => (
-                <Story>
-                    <UserStoryIcon />
+                usersWithStories && usersWithStories.map(s => (
+                <Story story={s}>
+                    <UserStoryIcon face={s.photo} />
                 </Story>
 
                 ))

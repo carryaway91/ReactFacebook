@@ -32,7 +32,7 @@ const Dashboard = props => {
 
             <Main>
                 <Switch>
-                    <Route path="/story" component={Stories} />
+                    <Route path="/story/:id" component={Stories} />
                     <Route path="/" render={() => <Home friends={props.user && props.user.friends}/>}/>
                 </Switch>
             </Main>

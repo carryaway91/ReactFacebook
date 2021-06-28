@@ -1,13 +1,10 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Logo from '../../components/Logo/Logo';
 import InfoContainer from '../../components/nav/userSection/UI/InfoContainer';
 import UserCircle from '../../components/userCircle/UserCircle';
-import Photo from '../../img/baba.jpg'
 
-const LeftStoryPanel = () => {
-    const [stories, setStories] = useState([...Array(8)])
+const LeftStoryPanel = props => {
 
     return (
         <Container>
@@ -49,15 +46,17 @@ const LeftStoryPanel = () => {
                             <h3>All stories</h3>
                             <div style={{ position: 'relative', left: '-8px'}}>
                                 {
-                                    stories && stories.map(s => (
-                                        <InfoContainer>
-                                            <UserCircle w="60px" photo={Photo} />
-                                            <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', marginLeft: '.5rem'}}>
-                                                <h5 style={{ margin: 0}}>Contact</h5>
-                                                <p style={{ margin: 0}}><span style={{ color: 'blue'}}>1 new</span>
-                                                <span style={{ position: 'relative', bottom: '3px', margin: '0 .4rem'}}>.</span>9h</p>
-                                            </div>
-                                        </InfoContainer>
+                                    props.friends && props.friends.map(f => (
+                                        <div>
+                                            <NavLink style={{textDecoration: 'none', display: 'flex', width: '100%', padding: '.5rem', borderRadius: '.3rem'}} activeStyle={{ background: '#ddd'}} to={`/story/${f.story.id}`}>
+                                                <UserCircle w="60px" photo={f.photo} />
+                                                <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', marginLeft: '.5rem'}}>
+                                                    <h5 style={{ margin: 0, color: 'black'}}>{ f.fName + ' ' + f.lName }</h5>
+                                                    <p style={{ margin: 0}}><span style={{ color: 'blue'}}>1 new</span>
+                                                    <span style={{ position: 'relative', bottom: '3px', margin: '0 .4rem'}}>.</span><span style={{ color: 'gray'}}>9h</span></p>
+                                                </div>
+                                            </NavLink>
+                                        </div>
                                     ))
                                 }
                             </div>

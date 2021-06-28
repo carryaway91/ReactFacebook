@@ -8,7 +8,7 @@ const Message = props => {
     const { showChat } = useContext(ChatContext)
     
     return (
-        <InfoContainer >
+        <InfoContainer>
             <div style={{ display: 'flex', width: '100%' }} onClick={() => showChat(props.friend)}>
                 <UserCircle w="60px" photo={props.friend.photo}/>
                 <div style={{ marginLeft: '.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>

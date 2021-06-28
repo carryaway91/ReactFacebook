@@ -5,6 +5,7 @@ import Button from './Button/Button'
 import ContextWindow from './ContextWindow/ContextWindow'
 import Messages from './Messages/Messages'
 import Notifications from './Notifications/Notifications'
+import Create from './Create/Create'
 
 const UserSection = props => {
     const [activeIcon, setActiveIcon] = useState('')
@@ -64,7 +65,9 @@ const UserSection = props => {
                 !hideWindow && <ContextWindow
                     data={activeIcon == 'messages' ? <Messages friends={ props.user && props.user.friends}/>
                     :
-                    activeIcon == 'notifications' ? <Notifications friends={ props.user && props.user.friends} /> : null
+                    activeIcon == 'notifications' ? <Notifications friends={ props.user && props.user.friends} /> 
+                    :
+                    activeIcon == 'create' ? <Create /> : null 
                 }/>
             }
         </Nav>

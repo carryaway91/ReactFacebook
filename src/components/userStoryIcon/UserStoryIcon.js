@@ -1,11 +1,10 @@
 import styled from 'styled-components'
-import Photo from '../../img/baba.jpg'
 
 
-const UserStoryIcon = () => {
+const UserStoryIcon = props => {
     return (
         <Icon>
-            <Img src={Photo} />
+            <Img src={props.face && props.face} />
         </Icon>
     )
 }
