@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Logo = props => {
     return (
         <LogoContainer>
-            <Link to="/home" style={{ color: 'white', width: '100%', display: 'flex', 
+            <Link to="/" style={{ color: 'white', width: '100%', display: 'flex', 
                 justifyContent: 'center', alignItems: 'center',
                 position: 'relative',
                 top: '2px'

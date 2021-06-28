@@ -20,11 +20,11 @@ const ShareContext = () => {
             <ul style={{ listStyleType: 'none', margin: 0, padding: 0}}>
                 <Li>
                     <Share />
-                    <span>Share now (Friends)</span>
+                    <span style={{ marginLeft: '.5rem'}}>Share now (Friends)</span>
                 </Li>
                 <Li>
                     <img src={Message} style={{ objectFit: 'cover'}} width="20" height="20"/>
-                    <span>Share to News Feed</span>
+                    <span style={{ marginLeft: '.5rem'}}>Share to News Feed</span>
                 </Li>
               
             </ul>

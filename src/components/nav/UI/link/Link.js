@@ -6,8 +6,8 @@ const Link = (props) => {
 
    
     return (
-        <LinkItem>
-            <NavLink style={{ width: '100%', padding: '.7rem 2.6rem', textDecoration: 'none', borderBottom: '3px solid white' }} to={props.to}  activeStyle={{ borderBottom: '3px solid #1877f2', color: 'blue', fill: '#1877f2', stroke: 'none'}}>
+        <LinkItem onMouseEnter={props.show} onMouseLeave={props.hide}>
+            <NavLink exact style={{ position: 'relative', width: '100%', padding: '.7rem 2.6rem', textDecoration: 'none', borderBottom: '3px solid white' }} to={props.to}  activeStyle={{ borderBottom: '3px solid #1877f2', color: 'blue', fill: '#1877f2', stroke: 'none'}}>
                     {props.children}
             </NavLink>
         </LinkItem>

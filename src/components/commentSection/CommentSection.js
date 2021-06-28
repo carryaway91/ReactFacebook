@@ -13,7 +13,7 @@ const CommentSection = () => {
 };
 
 const Input = styled.input`
-    background: #ddd;
+    background: #eee;
     padding: .2rem 1rem;
     border-radius: 2rem;
     width: 100%;

@@ -11,6 +11,7 @@ const PostContainer = props => {
 };
 
 const Post = styled.div`
+    margin-bottom: 1rem;
     box-sizing: border-box;
     position: relative;
     min-height: 123px;

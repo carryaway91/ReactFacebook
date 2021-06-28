@@ -32,8 +32,8 @@ const Dashboard = props => {
 
             <Main>
                 <Switch>
-                    <Route path="/home" component={Home} />
                     <Route path="/story" component={Stories} />
+                    <Route path="/" render={() => <Home friends={props.user && props.user.friends}/>}/>
                 </Switch>
             </Main>
 
@@ -68,15 +68,12 @@ const LeftPanel = styled.div`
 const RightPanel = styled.div`
     padding: 0 .45rem;
     height: 100vh;
-    overflow-y: scroll;
-    
-    ::-webkit-scrollbar {
-        display: none;
-    }
+    overflow: hidden;
+    scroll: hidden;
     &:hover {
-        overflow-x: visible;
-       
-        }
+        overflow-y: scroll;
+        scroll: auto
+    }
     }
 
 `

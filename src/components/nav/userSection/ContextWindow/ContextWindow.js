@@ -17,7 +17,7 @@ const ContextWindow = props => {
 
 const Context = styled.div`
     width: 360px;
-    height: 85vh;
+    max-height: 85vh;
     position: absolute;
     top: 60px;
     right: 10px;
@@ -26,6 +26,13 @@ const Context = styled.div`
     box-shadow: 1px 5px 15px 1px gray;
     z-index: 100000;
     overflow: scroll;
-`
+    overflow: hidden;
+    scroll: hidden;
+    
+    &:hover {
+        overflow-y: scroll;
+        scroll: auto
+    }
+    `
 
 export default ContextWindow

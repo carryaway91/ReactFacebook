@@ -29,7 +29,7 @@ const Button = props => {
 
     return (
         <Icon onClick={e => handleTriggerFocus(e)} style={props.active  ? { background: '#b8dbe8' } : null}>
-            <svg viewBox="0 0 28 28" height="20" width="20" fill={props.active ? 'blue' : 'black'}>
+            <svg viewBox={props.view} height="20" width="20" fill={props.active ? 'blue' : 'black'}>
                 { props.children }
             </svg>
         </Icon>
@@ -37,6 +37,7 @@ const Button = props => {
 }
 
 const Icon = styled.button`
+    position: relative;
     display: flex;
     padding: .5rem;
     background: #eee;

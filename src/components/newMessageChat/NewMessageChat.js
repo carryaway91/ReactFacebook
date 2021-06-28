@@ -1,14 +1,19 @@
 import styled from "styled-components"
 import UserCircle from "../userCircle/UserCircle"
 import Photo from '../../img/teta.jpg'
+import { Link } from "react-router-dom"
 const NewMessageChat = props => {
     return (
         <Container>
             <div style={{ display: 'flex', padding: '.5rem', justifyContent: 'space-between', position: 'relative'}}>
                 <div style={{display: 'flex'}}>
-                    <UserCircle w="35px" photo={Photo} />
+                <Link to={props.friend && `/profile/${props.friend.slug}`}>
+                    <UserCircle online w="35px" photo={props.friend && props.friend.photo} />
+                </Link>
                     <div style={{ marginLeft: '.5rem'}}>
-                        <h4 style={{margin: 0}}>{ props.friend && props.friend.fName + ' ' + props.friend.lName }</h4>
+                        <Link to={props.friend && `/profile/${props.friend.slug}`} style={{ textDecoration: 'none', color: 'black'}}>
+                            <h4 style={{margin: 0}}>{ props.friend && props.friend.fName + ' ' + props.friend.lName }</h4>
+                        </Link>
                         <p style={{ margin: 0, fontSize: '.7rem'}}>Active now</p>
                     </div>
                 </div>

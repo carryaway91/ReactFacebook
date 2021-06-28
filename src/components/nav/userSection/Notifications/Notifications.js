@@ -1,6 +1,6 @@
 import Notification from "./Notification/Notification"
 
-const Notifications = () => {
+const Notifications = props => {
     return (
         <div>
 
@@ -12,14 +12,10 @@ const Notifications = () => {
             </div>
         </div>
             <div style={{ padding: '0rem .5rem'}}>
-                <Notification /> 
-                <Notification /> 
-                <Notification /> 
-                <Notification /> 
-                <Notification /> 
-                <Notification /> 
-                <Notification /> 
-                <Notification /> 
+                {
+                    props.friends && props.friends.map(f => <Notification friend={f}/> )
+                }
+                
             </div>
         </div>
     )

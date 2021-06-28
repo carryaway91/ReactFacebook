@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import PostContainer from '../../UI/postContainer/PostContainer';
 import CommentSection from '../commentSection/CommentSection';
@@ -13,12 +14,17 @@ const Post = props => {
     const [emoji, setEmoji] = useState('')
 
     return (
-        <div style={{ marginTop: '1rem', display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center'}}>
+        <div style={{ marginBottom: '1rem', display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center'}}>
             <PostContainer w="100%">
                 <div style={{ display: 'flex'}}>
-                    <Img src={props.photo} />
+                    <Link to={`/profile/${props.user && props.user.slug}`}>
+                        <Img src={props.user && props.user.photo} />
+                    </Link>
+                    
                     <div style={{ diplay: 'flex', flexDirection: 'column', marginLeft: '.8rem'}}>
-                        { props.username }
+                    <Link to={`/profile/${props.user && props.user.slug}`} style={{ color: 'black', textDecoration: 'none'}}>
+                        { props.user && props.user.fName + ' ' + props.user.lName }
+                    </Link>
                         <p style={{ color: '#777', margin: 0, display: 'flex'}}>2h <Dot>.</Dot>
                         <span style={{ position: 'relative', top: '0px'}}><abbr title="Public"><World></World></abbr></span></p>
                    </div>

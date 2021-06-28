@@ -1,14 +1,13 @@
-import styled from "styled-components"
+import { useEffect } from 'react'
 import NewPost from "../../components/newPost/NewPost"
 import Post from "../../components/post/Post"
 import Stories from "../../components/stories/Stories"
 import Livia from '../../img/baba.jpg'
 import PostContainer from "../../UI/postContainer/PostContainer"
 
+const Home = props => {
 
-const Home = () => {
-
-
+    
     return (
         <div>
             <div style={{ marginBottom: '1.7rem'}}>
@@ -23,8 +22,8 @@ const Home = () => {
                 <div style={{ width: '82.4%'}}>
 
                     {
-                        [...Array(5)].map(p => (
-                            <Post username="Livia" 
+                        [...Array(3)].map((p, i) => (
+                            <Post user={props.friends && props.friends[i]} 
                             photo={Livia}
                             />
                             
