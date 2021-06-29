@@ -1,41 +1,36 @@
-import { useEffect } from 'react'
 import NewPost from "../../components/newPost/NewPost"
 import Post from "../../components/post/Post"
 import Stories from "../../components/stories/Stories"
 import Livia from '../../img/baba.jpg'
 import PostContainer from "../../UI/postContainer/PostContainer"
+import { Content, PostsContent } from "./Homestyles"
 
 const Home = props => {
 
     
     return (
-        <div>
-            <div style={{ marginBottom: '1.7rem'}}>
+            <Content>
                 <Stories />
 
-            </div>
-            <div style={{ display: 'flex', justifyContent: 'center', 
-                            alignItems: 'center', flexDirection: 'column', margin: '0 auto', width: '80%'}}>
-                <PostContainer w="82.4%">
-                    <NewPost />
-                </PostContainer>
-                <div style={{ width: '82.4%'}}>
-
-                    {
-                        [...Array(3)].map((p, i) => (
-                            <Post user={props.friends && props.friends[i]} 
-                            photo={Livia}
-                            />
-                            
-                            ))
-                    }
-                </div>
-                
-            </div>
-        </div>
+                <PostsContent>
+                    <PostContainer w="100%">
+                        <NewPost />
+                    </PostContainer>
+                    <div>
+                        {
+                            [...Array(3)].map((p, i) => (
+                                <Post user={props.friends && props.friends[i]} 
+                                photo={Livia}
+                                />
+                                
+                                ))
+                            }
+                    </div>
+                    
+                </PostsContent>
+            </Content>
     )
 }
-
 
 
 export default Home

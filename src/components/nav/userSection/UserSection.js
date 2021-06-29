@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
-import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 import Button from './Button/Button'
 import ContextWindow from './ContextWindow/ContextWindow'
 import Messages from './Messages/Messages'
 import Notifications from './Notifications/Notifications'
 import Create from './Create/Create'
+import { Nav, NavItem, UserIcon, Title, Plus } from './UserSectionStyles'
 
 const UserSection = props => {
     const [activeIcon, setActiveIcon] = useState('')
@@ -74,57 +74,5 @@ const UserSection = props => {
     )
 }
 
-const Nav = styled.ul`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-    margin: 0;
-    position: relative
-`
 
-
-const NavItem = styled.li`
-    position: relative;
-    list-style-type: none;
-    background: #eee;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    margin: 0 .3rem
-
-`
-
-const UserIcon = styled.li`
-    box-sizing: border-box;
-    list-style-type: none;
-    margin: 0 1rem;
-    border-radius: 2rem;
-
-    &:hover {
-        background: #eee
-    }
-`
-
-const Title = styled.div`
-    position: absolute;
-    bottom: -2.3rem;
-    left: -1rem;
-    padding: .2rem;
-    font-size: .9em;
-    background: rgba(0,0,0,.7);
-    color: white;
-    display: flex;
-    justify-content: center;
-    border-radius: .2rem;
-`
-
-const Plus = styled.span`
-    &:before {
-        content: '+';
-        position: absolute;
-        top: 0;
-        left: 0
-    }
-`
 export default UserSection

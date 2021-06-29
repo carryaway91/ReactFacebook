@@ -14,7 +14,7 @@ const Stories = props => {
     }, [])
 
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '1rem', paddingRight: '.7rem'}}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', paddingTop: '1rem', marginBottom: '1rem'}}>
             <Story photo={Photo} main={true} />
             {
                 usersWithStories && usersWithStories.map(s => (

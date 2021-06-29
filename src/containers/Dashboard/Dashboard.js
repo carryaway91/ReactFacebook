@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { Route, Switch } from 'react-router';
-import styled from 'styled-components';
 import AdPanel from '../../components/adPanel/AdPanel';
 import AsideNav from '../../components/asideNav/AsideNav';
 import Contacts from '../../components/contacts/Contacts';
 import Home from '../home/Home';
 import Stories from '../Stories/Stories';
 import UserContextWindow from '../../components/userContextWindow/UserContextWindow';
-
+import { Main, LeftPanel, RightPanel } from './DashboardStyles';
 const Dashboard = props => {
     const [userContext, setUserContext] = useState(false)
     const [top, setTop] = useState(0)
@@ -49,33 +48,5 @@ const Dashboard = props => {
         </div>
     );
 };
-
-const Main = styled.main`
-    flex: 4;
-    overflow: scroll;
-    height: 100%;
-
-    ::-webkit-scrollbar {
-        display: none;
-    }
-
-    
-`
-
-const LeftPanel = styled.div`
-    flex: 1.5
-`
-const RightPanel = styled.div`
-    padding: 0 .45rem;
-    height: 100vh;
-    overflow: hidden;
-    scroll: hidden;
-    &:hover {
-        overflow-y: scroll;
-        scroll: auto
-    }
-    }
-
-`
 
 export default Dashboard;

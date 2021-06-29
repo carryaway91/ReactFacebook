@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import styled from "styled-components"
 import UserCircle from '../userCircle/UserCircle'
 import Link from "./Link/Link"
 import Covid from './icons/covid.png'
@@ -11,6 +10,7 @@ import Watch from './icons/watch.png'
 import Down from './icons/Down'
 import Shortcut from './icons/shortcut.png'
 import More from './icons/more.png'
+import { Menu } from './AsideNavStyles'
 
 const AsideNav = props => {
     const [showMore, setShowMore] = useState(false)
@@ -107,20 +107,5 @@ const AsideNav = props => {
         </Menu>
     )
 }
-
-const Menu = styled.ul`
-    flex: 1;
-    padding: 0 0 1rem .5rem;
-    margin: .3rem 0 0 .3rem;
-    overflow: hidden;
-    scroll: hidden;
-    overflow-x: hidden;
-    height: 88vh;
-
-    &:hover {
-        overflow-y: scroll;
-        scroll: auto
-    }
-`
 
 export default AsideNav

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
 import PostContainer from '../../UI/postContainer/PostContainer';
 import CommentSection from '../commentSection/CommentSection';
 import FullLike from '../interactionPanel/icons/FullLike';
@@ -8,17 +7,18 @@ import Heart from '../interactionPanel/icons/Heart';
 import Laugh from '../interactionPanel/icons/Laugh';
 import InteractionPanel from '../interactionPanel/InteractionPanel';
 import World from './WorldSvg'
+import { Container, ProfilePhoto, Dot, ImageHolder, Image, EmojiContainer } from './PostStyles';
 
 const Post = props => {
     const [commentSection, setCommentSection] = useState(false)
     const [emoji, setEmoji] = useState('')
 
     return (
-        <div style={{ marginBottom: '1rem', display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center'}}>
+        <Container>
             <PostContainer w="100%">
                 <div style={{ display: 'flex'}}>
                     <Link to={`/profile/${props.user && props.user.slug}`}>
-                        <Img src={props.user && props.user.photo} />
+                        <ProfilePhoto src={props.user && props.user.photo} />
                     </Link>
                     
                     <div style={{ diplay: 'flex', flexDirection: 'column', marginLeft: '.8rem'}}>
@@ -37,27 +37,27 @@ const Post = props => {
                     molestie at elementum. Ipsum dolor sit amet consectetur adipiscing elit. In mollis nunc sed id. Eros donec ac odio 
                     tempor orci dapibus ultrices in iaculis.
                 </p>
-                <InnerContainer>
+                <ImageHolder>
                     {
                         <Image src="https://images.unsplash.com/photo-1612151855475-877969f4a6cc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aGQlMjBpbWFnZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80" />
                     }
-                </InnerContainer>
+                </ImageHolder>
                 {
                     emoji && (
-                        <div style={{ marginBottom: '.2rem', paddingBottom: '.5rem', borderBottom: '1px solid lightgray'}}>
+                        <EmojiContainer>
                             {
-                                emoji == '' && null
+                                emoji === '' && null
                             }
                             { 
-                                emoji == 'fullLike' && ( <div style={{ display: 'flex', alignItems:'center'}}><FullLike w="20" /> &nbsp;Peter Babej </div> )
+                                emoji === 'fullLike' && ( <div className="emoji"><FullLike w="20" /> &nbsp;Peter Babej </div> )
                             }
                             { 
-                                emoji == 'heart' && ( <div style={{ display: 'flex', alignItems:'center'}}><Heart w="20" /> &nbsp;Peter Babej </div> )
+                                emoji === 'heart' && ( <div className="emoji"><Heart w="20" /> &nbsp;Peter Babej </div> )
                             }
                             { 
-                                emoji == 'laugh' && ( <div style={{ display: 'flex', alignItems:'center'}}><Laugh w="20" /> &nbsp;Peter Babej </div> )
+                                emoji === 'laugh' && ( <div className="emoji"><Laugh w="20" /> &nbsp;Peter Babej </div> )
                             }
-                        </div>
+                        </EmojiContainer>
                     )
                 }
                 <InteractionPanel clicked={() => setCommentSection(!commentSection) } emoji={(e) => setEmoji(e)}/>
@@ -66,31 +66,8 @@ const Post = props => {
                 }
             </PostContainer>
 
-        </div>
+        </Container>
     );
 };
-
-const Img = styled.img`
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-`
-
-const Dot = styled.span`
-    position: relative;
-    bottom: 3px;
-    margin: 0 .2rem
-`
-const InnerContainer = styled.div`
-    position: relative;
-    top: -7px;
-    width: calc(100% + 2rem);
-    left: -1rem;
-`
-
-const Image = styled.img`
-    max-width: 100%
-`
 
 export default Post;

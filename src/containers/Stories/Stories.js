@@ -25,7 +25,15 @@ const Stories = () => {
             <LeftStoryPanel friends={friendsWithStories && friendsWithStories} />
             <RightPanel>
                 <Story>
-                    <Img src={userWithStory && userWithStory.story.story} />
+                    {
+                        userWithStory 
+                        ? 
+                        <Img src={userWithStory && userWithStory.story.story} />
+                        :
+                        <div style={{width: '100%', height: '100%', background: 'blue', color: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center', borderRadius: '.3rem'}}>
+                            Create new story
+                        </div>
+                    }
                 </Story>
             </RightPanel>
         </Container>

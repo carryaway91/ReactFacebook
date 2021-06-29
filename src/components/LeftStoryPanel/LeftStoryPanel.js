@@ -35,13 +35,15 @@ const LeftStoryPanel = props => {
                     <div style={{ padding: '0 1rem' }}>
                         <h3>Your story</h3>
                             <div style={{ position: 'relative', left: '-8px'}}>
-                                <InfoContainer>
-                                    <Create><span style={{ position: 'relative', bottom: '5px'}}>+</span></Create>
-                                    <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', marginLeft: '.5rem'}}>
-                                        <h5 style={{ margin: 0}}>Create a story</h5>
-                                        <p style={{ margin: 0, fontSize: '.8rem'}}>Share a photo or write something</p>
-                                    </div>
-                                </InfoContainer>
+                                <NavLink to={`/story/create`} style={{ textDecoration: 'none'}}>
+                                    <InfoContainer>
+                                        <Create><span style={{ position: 'relative', bottom: '5px'}}>+</span></Create>
+                                        <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', marginLeft: '.5rem'}}>
+                                            <h5 style={{ margin: 0, color: 'black'}}>Create a story</h5>
+                                            <p style={{ margin: 0, fontSize: '.8rem', color: 'gray'}}>Share a photo or write something</p>
+                                        </div>
+                                    </InfoContainer>
+                                </NavLink>
                             </div>
                             <h3>All stories</h3>
                             <div style={{ position: 'relative', left: '-8px'}}>

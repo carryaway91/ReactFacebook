@@ -1,6 +1,6 @@
-import styled from 'styled-components'
 import NavLink from '../UI/link/Link'
 import { useState } from 'react'
+import { Nav, Title } from './GeneralStyles'
 
 const General = () => {
     const [icon, setIcon] = useState('')
@@ -30,24 +30,5 @@ const General = () => {
     )
 }
 
-const Nav = styled.ul`
-    display: flex;
-    justify-content: space-between;
-    width: 37.5rem;
-    margin: 0
-`
-
-const Title = styled.div`
-    position: absolute;
-    bottom: -1.8rem;
-    left: 2rem;
-    padding: .2rem;
-    font-size: .9em;
-    background: rgba(0,0,0,.7);
-    color: white;
-    display: flex;
-    justify-content: center;
-    border-radius: .2rem;
-`
 
 export default General
