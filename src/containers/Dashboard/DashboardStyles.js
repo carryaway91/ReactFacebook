@@ -9,16 +9,24 @@ export const Main = styled.main`
     ::-webkit-scrollbar {
         display: none;
     }
-
+`
     
-    `
-    
-    export const LeftPanel = styled.div`
+export const LeftPanel = styled.div`
     flex: 1.5;
     ${devices.tablet} {
         display: none
     }
 `
+
+export const RightPanelWrap = styled.div`
+    position: relative;
+    flex: 1.4;
+
+    ${devices.mobile} {
+        display: none
+    }
+`
+
 export const RightPanel = styled.div`
     padding: 0 .45rem;
     height: 100vh;
@@ -29,5 +37,4 @@ export const RightPanel = styled.div`
         overflow-y: scroll;
         scroll: auto
     }
-    
 `

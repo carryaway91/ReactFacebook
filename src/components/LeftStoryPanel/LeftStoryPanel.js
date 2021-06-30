@@ -1,9 +1,9 @@
 import { NavLink, Link } from 'react-router-dom';
-import styled from 'styled-components';
 import Logo from '../../components/Logo/Logo';
 import InfoContainer from '../../components/nav/userSection/UI/InfoContainer';
 import UserCircle from '../../components/userCircle/UserCircle';
-
+import Cancel from './UI/Cancel'
+import { Container, LeftPanel, RightPanel, Create } from './LeftStoryPanelStyles';
 const LeftStoryPanel = props => {
 
     return (
@@ -11,11 +11,7 @@ const LeftStoryPanel = props => {
             <LeftPanel>
 
                 <div style={{ display: 'flex', alignItems: 'center', padding: '.3rem', borderBottom: '1px solid #ddd', padding: '.5rem 0'}}>
-                    <Cancel>
-                       <Link to="/home" style={{ textDecoration: 'none', color: 'white'}}>
-                        +
-                       </Link>
-                    </Cancel>
+                    <Cancel/>
                     <div style={{ position: 'relative', top: '-7px', marginLeft: '.3rem'}}>
                         <Logo />
                     </div>
@@ -71,62 +67,5 @@ const LeftStoryPanel = props => {
         </Container>
     );
 };
-
-const Container = styled.div`
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 100000000000;
-    display: flex
-`
-
-const LeftPanel = styled.div`
-    background: white;
-    width: 360px;
-    overflow: hidden;
-`
-
-const RightPanel = styled.div`
-    flex: 3;
-    background: black
-`
-
-const Cancel = styled.button`
-    position: relative;
-    left: 10px;
-    border: none;
-    border-radius: 50%;
-    padding: .5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    background: #888;
-    font-size: 3rem;
-    font-weight: 100;
-    width: 2.6rem;
-    height: 2.6rem;
-    transform: rotate(45deg);
-
-    &:hover {
-        cursor: pointer;
-        background: #777;
-    }
-`
-
-const Create = styled.div`
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: blue;
-    background: #eee;
-    width: 60px;
-    height: 60px;
-    font-size: 3rem
-`
-
 
 export default LeftStoryPanel;

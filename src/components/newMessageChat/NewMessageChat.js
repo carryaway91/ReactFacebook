@@ -1,7 +1,8 @@
-import styled from "styled-components"
 import UserCircle from "../userCircle/UserCircle"
 import Photo from '../../img/teta.jpg'
 import { Link } from "react-router-dom"
+import { Container, MyMessage, ContactMessage, SVG } from './NewMessageChatStyles'
+
 const NewMessageChat = props => {
     return (
         <Container>
@@ -43,48 +44,5 @@ const NewMessageChat = props => {
     )
 }
 
-const Container = styled.div`
-    position: fixed;
-    bottom: 0;
-    right: 7rem;
-    width: 328px;
-    height: 452px;
-    background: white;
-    border-radius: .3rem;
-    box-shadow: 0 1px 4px 0px lightgray;
-    z-index: 101
-`
 
-const MyMessage = styled.div`
-    border-radius: .3rem;
-    padding: .5rem;
-    background: lightgray;
-    width: 60%;
-    word-break: break-word;
-    align-self: flex-end;
-
-`
-    
-const ContactMessage = styled.div`
-    border-radius: .3rem;
-    padding: .5rem;
-    background: #1877f2;
-    width: 60%;
-    word-break: break-word;
-    align-self: flex-start;
-    color: white
-
-`
-
-const SVG = styled.svg`
-    border-radius: 50%;
-    fill: blue;
-    position: relative;
-    top: 4px;
-
-    &:hover {
-        background: #ddd;
-        cursor: pointer
-    }
-    `
 export default NewMessageChat

@@ -7,7 +7,6 @@ import { Content, PostsContent } from "./Homestyles"
 
 const Home = props => {
 
-    
     return (
             <Content>
                 <Stories />
@@ -16,7 +15,6 @@ const Home = props => {
                     <PostContainer w="100%">
                         <NewPost />
                     </PostContainer>
-                    <div>
                         {
                             [...Array(3)].map((p, i) => (
                                 <Post user={props.friends && props.friends[i]} 
@@ -25,7 +23,6 @@ const Home = props => {
                                 
                                 ))
                             }
-                    </div>
                     
                 </PostsContent>
             </Content>

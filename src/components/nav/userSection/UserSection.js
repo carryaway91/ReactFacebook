@@ -5,7 +5,7 @@ import ContextWindow from './ContextWindow/ContextWindow'
 import Messages from './Messages/Messages'
 import Notifications from './Notifications/Notifications'
 import Create from './Create/Create'
-import { Nav, NavItem, UserIcon, Title, Plus } from './UserSectionStyles'
+import { Nav, NavItem, UserIcon, Title, Plus, CreateWrap } from './UserSectionStyles'
 
 const UserSection = props => {
     const [activeIcon, setActiveIcon] = useState('')
@@ -40,6 +40,7 @@ const UserSection = props => {
                     <strong style={{ marginLeft: '.5rem', color: '#000' }}>{ props.user && props.user.fName}</strong>
                 </NavLink>
             </UserIcon>
+            <CreateWrap>
             <NavItem onMouseEnter={() => setIcon('create')} onMouseLeave={() => setIcon('')}>
                 { icon == 'create' && <Title>Create</Title>}
                 <Button view="0 0 46 46" hideWindow={(status) => handleTriggerWindow(status, 'create')} active={activeIcon == 'create'}>
@@ -49,6 +50,7 @@ const UserSection = props => {
                         c2.283,0,4.134-1.867,4.133-4.15C45.399,20.425,43.548,18.557,41.267,18.557z"/>
                 </Button>
             </NavItem>
+            </CreateWrap>
             <NavItem onMouseEnter={() => setIcon('messenger')} onMouseLeave={() => setIcon('')}>
                 { icon == 'messenger' && <Title>Messenger</Title>}
                 <Button view="0 0 28 28" hideWindow={(status) => handleTriggerWindow(status, 'messages')} active={activeIcon == 'messages'}  >

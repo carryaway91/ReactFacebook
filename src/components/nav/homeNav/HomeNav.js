@@ -1,7 +1,8 @@
 import { useRef, useState } from 'react'
 import Logo from '../../Logo/Logo'
 import './Loader.css'
-import { SearchBar, Search, Magnifier, InputMagnifier } from './HomeNavStyles'
+import { SearchBar, Search, Magnifier, InputMagnifier, MobileNav } from './HomeNavStyles'
+import NavLink from '../UI/link/Link'
 
 const HomeNav = () => {
     const [showPanel, setShowPanel] = useState(false)
@@ -84,6 +85,11 @@ const HomeNav = () => {
                 <InputMagnifier ref={search} onClick={handleInputFocus} enableBackground="new 0 0 50 50" height="20px" viewBox="0 0 50 50" width="20px"><rect fill="none" height="50" width="50"/><circle cx="21" cy="20" fill="none" r="16" stroke="#000000" strokeLinecap="round" strokeMiterlimit="10" /><line fill="none" stroke="#000000" strokeMiterlimit="10" strokeWidth="4" x1="32.229" x2="45.5" y1="32.229" y2="45.5"/></InputMagnifier>
                 <Search ref={input} placeholder="Search Facebook" onFocus={handleInputFocus} onBlur={handleInputBlur} onChange={handleInput} value={inputValue}/>
             </div>
+            <MobileNav>
+                <NavLink to="/bookmarks">
+                    <svg viewBox="0 0 28 28" height="28" width="28"><path d="M23.5 4a1.5 1.5 0 110 3h-19a1.5 1.5 0 110-3h19zm0 18a1.5 1.5 0 110 3h-19a1.5 1.5 0 110-3h19zm0-9a1.5 1.5 0 110 3h-19a1.5 1.5 0 110-3h19z"></path></svg>
+                </NavLink>
+            </MobileNav>
         </div>
     )
 }

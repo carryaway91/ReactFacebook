@@ -11,6 +11,12 @@ export const Content = styled.div`
         width: 680px;
         left: -.85rem
     }
+
+    ${devices.xs} {
+        width: 100%;
+        margin: 0;
+        left: 0
+    }
 `
     
 export const PostsContent = styled.div`
@@ -19,9 +25,13 @@ export const PostsContent = styled.div`
     justify-content: center;
     align-items: center;
     margin: 0 auto; 
-    width: 80%;
+    width: 88%;
     
     ${devices.desktop} {
         width: 100%
     };
+
+    ${devices.xs} {
+        width: 100%
+    }
 `

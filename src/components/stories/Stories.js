@@ -3,6 +3,7 @@ import Story from './story/Story'
 import Photo from '../../img/ja.jpg'
 import { useState, useEffect } from 'react'
 import { data } from '../../api/api'
+import { StoriesContainer } from './StoriesStyles'
 
 const Stories = props => {
     const [usersWithStories, setUsersWithStories] = useState()
@@ -14,7 +15,7 @@ const Stories = props => {
     }, [])
 
     return (
-        <div style={{ display: 'flex', justifyContent: 'space-between', paddingTop: '1rem', marginBottom: '1rem'}}>
+        <StoriesContainer>
             <Story photo={Photo} main={true} />
             {
                 usersWithStories && usersWithStories.map(s => (
@@ -25,7 +26,7 @@ const Stories = props => {
                 ))
             }
 
-        </div>
+        </StoriesContainer>
     )
 }
 

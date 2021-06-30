@@ -56,3 +56,17 @@ export const InputMagnifier = styled.svg`
     top: 17px;
     left: 9px;
 `
+
+export const MobileNav = styled.div`
+position: relative;
+left: 45px;
+    ${devices.desktop} {
+        display: none
+    }    
+    ${devices.notebook} {
+        display: none
+    }
+    ${devices.tablet} {
+        display: block
+    }
+`

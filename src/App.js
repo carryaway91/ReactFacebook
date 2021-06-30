@@ -14,8 +14,10 @@ import Stories from './containers/Stories/Stories';
 import Dashboard from './containers/Dashboard/Dashboard';
 import Profile from './containers/Profile/Profile';
 import { data } from './api/api'
-
-  const App = () => {
+import MobileNavigation from './components/MobileNavigation/MobileNavigation';
+import { Content, Layout, NavWrap } from './AppStyles';
+ 
+const App = () => {
     const [user, setUser] = useState()
     const [friend, setFriend] = useState()
     const [showChat, setShowChat] = useState(false)
@@ -72,6 +74,9 @@ const handleHideOverlay = () => {
             showChat: handleOpenChat,
         }}>
             <Nav user={user} />
+            <NavWrap>
+              <MobileNavigation />
+            </NavWrap>
         </ChatContext.Provider>
 
             <Switch>
@@ -89,21 +94,5 @@ const handleHideOverlay = () => {
   );
 }
 
-const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  `
 
-
-  const Layout = styled.div`
-position: absolute;
-top: 0;
-left: 0;
-bottom: 0;
-right: 0;
-background: white;
-opacity: .7;
-z-index: 99
-`
 export default App;

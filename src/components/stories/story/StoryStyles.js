@@ -14,7 +14,17 @@ export const Container = styled.div`
     }
 
     ${devices.desktop} {
-        max-width: 130px
+        max-width: 130px;
+        height: 220px;
+    }
+
+    ${devices.xs} {
+        width: 24%;
+        height: auto;
+        &:last-child {
+            display: none
+        };
+   
     }
     `
     

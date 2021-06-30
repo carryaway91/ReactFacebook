@@ -1,11 +1,16 @@
 import styled from "styled-components"
+import { devices } from "../../media"
 
 export const Container = styled.div`
     margin-bottom: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center
+    align-items: center;
+
+    ${devices.xs} {
+        max-width: 100%
+    }
 `
 
 export const ProfilePhoto = styled.img`

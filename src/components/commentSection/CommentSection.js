@@ -1,7 +1,7 @@
 import React from 'react';
 import UserCircle from '../userCircle/UserCircle';
 import Photo from '../../img/ja.jpg'
-import styled from 'styled-components';
+import { Input } from './CommentSectionStyles'
 
 const CommentSection = () => {
     return (
@@ -12,15 +12,6 @@ const CommentSection = () => {
     );
 };
 
-const Input = styled.input`
-    background: #eee;
-    padding: .2rem 1rem;
-    border-radius: 2rem;
-    width: 100%;
-    margin-left: 1rem;
-    outline: none;
-    border: none
-`
 
 
 export default CommentSection;

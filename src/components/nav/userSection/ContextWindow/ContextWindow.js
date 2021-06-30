@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import { Context } from './ContextWindowStyles'
 
 const ContextWindow = props => {
 
@@ -15,24 +15,5 @@ const ContextWindow = props => {
     )
 }
 
-const Context = styled.div`
-    width: 360px;
-    max-height: 85vh;
-    position: absolute;
-    top: 60px;
-    right: 10px;
-    background: white;
-    border-radius: .3rem;
-    box-shadow: 1px 5px 15px 1px gray;
-    z-index: 100000;
-    overflow: scroll;
-    overflow: hidden;
-    scroll: hidden;
-    
-    &:hover {
-        overflow-y: scroll;
-        scroll: auto
-    }
-    `
 
 export default ContextWindow
