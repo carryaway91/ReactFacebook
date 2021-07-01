@@ -12,6 +12,7 @@ import { Main, LeftPanel, RightPanel,RightPanelWrap } from './DashboardStyles';
 import Pages from '../Pages/Pages';
 import Watch from './Watch/Watch';
 import Groups from './Groups/Groups';
+import { withRouter } from 'react-router-dom';
 
 
 const Dashboard = props => {
@@ -33,7 +34,7 @@ const Dashboard = props => {
     return (
         <div style={{ display: 'flex', height: 'calc(90.5vh)', overflowY: 'hidden', background: '#f0f2f5', position: 'relative'}}>
             {
-                window.location.pathname !== '/bookmarks' && (
+                props.location.pathname !== '/bookmarks' && (
                     <LeftPanel>
                         <AsideNav user={props.user} />
                     </LeftPanel>
@@ -53,7 +54,7 @@ const Dashboard = props => {
             </Main>
 
             {
-                window.location.pathname === '/' && (
+                props.location.pathname === '/' && (
                     <RightPanelWrap>
                         <RightPanel>
                             <AdPanel />
@@ -69,4 +70,4 @@ const Dashboard = props => {
     );
 };
 
-export default Dashboard;
+export default withRouter(Dashboard);

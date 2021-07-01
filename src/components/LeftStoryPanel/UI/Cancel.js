@@ -4,7 +4,7 @@ import { CancelContainer } from './CancelStyles';
 const Cancel = () => {
     return (
         <CancelContainer>
-            <Link to="/home" style={{ textDecoration: 'none', color: 'white'}}>
+            <Link to="/" style={{ textDecoration: 'none', color: 'white'}}>
             +
             </Link>
         </CancelContainer>
