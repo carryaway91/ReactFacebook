@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Photo from '../../img/ja.jpg'
 import Control from './control/Control';
 import { LayoutContext } from '../../context/LayoutContext'
@@ -12,7 +13,9 @@ const NewPost = () => {
     return (
         <div>
             <div style={{ display: 'flex', alignItems: 'center'}}>
-                <img src={Photo} width="40" height="40" style={{ borderRadius: '50%' }} />
+                <Link to="/profile/peter-babej">
+                    <img src={Photo} width="40" height="40" style={{ borderRadius: '50%' }} />
+                </Link>
 
                 <PostInput placeholder="What's on your mind, Peter?" onFocus={() => showOverlay()} />
 

@@ -32,7 +32,7 @@ const Dashboard = props => {
 
 
     return (
-        <div style={{ display: 'flex', height: 'calc(90.5vh)', overflowY: 'hidden', background: '#f0f2f5', position: 'relative'}}>
+        <div style={{ display: 'flex', height: 'calc(100vh - 54px)', overflowY: 'hidden', background: '#f0f2f5', position: 'relative'}}>
             {
                 props.location.pathname !== '/bookmarks' && (
                     <LeftPanel>

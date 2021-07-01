@@ -10,7 +10,7 @@ import Watch from './icons/watch.png'
 import Down from './icons/Down'
 import Shortcut from './icons/shortcut.png'
 import More from './icons/more.png'
-import { Menu } from './AsideNavStyles'
+import { Menu, MoreBtn } from './AsideNavStyles'
 
 const AsideNav = props => {
     const [showMore, setShowMore] = useState(false)
@@ -47,8 +47,7 @@ const AsideNav = props => {
                 <span style={{ marginLeft: '.5rem'}}>Watch</span>
             </Link>
             <Link>
-                <button onClick={() => setShowMore(!showMore)} style={{ display: 'flex', alignItems: 'center',
-                outline: 'none', border: 'none', cursor: 'pointer', background: 'transparent', fontWeight: 'bold'}}><Down />See {showMore ? 'less' : 'more'}</button>
+                <MoreBtn onClick={() => setShowMore(!showMore)}><Down />See {showMore ? 'less' : 'more'}</MoreBtn>
             </Link>
 
             {

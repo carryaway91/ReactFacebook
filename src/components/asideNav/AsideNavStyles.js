@@ -16,3 +16,14 @@ export const Menu = styled.ul`
     }
 
 `
+
+export const MoreBtn = styled.button`
+    display: flex;
+    align-items: center;
+    width: 100%;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    font-weight: bold
+`
