@@ -6,8 +6,13 @@ import Contacts from '../../components/contacts/Contacts';
 import Home from '../home/Home';
 import Stories from '../Stories/Stories';
 import Bookmarks from '../Bookmarks/Bookmarks';
+import Friends from '../Friends/Friends'
 import UserContextWindow from '../../components/userContextWindow/UserContextWindow';
 import { Main, LeftPanel, RightPanel,RightPanelWrap } from './DashboardStyles';
+import Pages from '../Pages/Pages';
+import Watch from './Watch/Watch';
+import Groups from './Groups/Groups';
+
 
 const Dashboard = props => {
     const [userContext, setUserContext] = useState(false)
@@ -39,12 +44,16 @@ const Dashboard = props => {
                 <Switch>
                     <Route path="/story/:id" component={Stories} />
                     <Route path="/bookmarks" render={() => <Bookmarks user={props.user} />}/>
+                    <Route path="/friends" component={Friends}/>
+                    <Route path="/pages" component={Pages}/>
+                    <Route path="/watch" component={Watch}/>
+                    <Route path="/groups" component={Groups}/>
                     <Route path="/" render={() => <Home friends={props.user && props.user.friends}/>}/>
                 </Switch>
             </Main>
 
             {
-                window.location.pathname !== '/bookmarks' && (
+                window.location.pathname === '/' && (
                     <RightPanelWrap>
                         <RightPanel>
                             <AdPanel />

@@ -39,7 +39,7 @@ export const Image = styled.img`
 export const EmojiContainer = styled.div`
     margin-bottom: .2rem;
     padding-bottom: .5rem;
-    border-bottom: 1px solid lightgray
+    border-bottom: 1px solid lightgray;
 
     .emoji {
         display: flex;

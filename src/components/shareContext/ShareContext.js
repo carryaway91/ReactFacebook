@@ -40,7 +40,8 @@ const Context = styled.div`
     border-radius: .4rem;
     z-index: 1000;
     top: 3rem;
-    box-shadow: 0 0 7px 2px lightgray
+    left: -50%;
+    box-shadow: 0 0 7px 2px lightgray;
 `
 
 const Li = styled.li`

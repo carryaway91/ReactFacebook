@@ -1,16 +1,9 @@
 import Nav from './components/nav/Nav'
-import styled from 'styled-components';
-import AsideNav from './components/asideNav/AsideNav';
 import { Route, Switch } from 'react-router';
-import Home from './containers/home/Home';
-import AdPanel from './components/adPanel/AdPanel';
-import Contacts from './components/contacts/Contacts';
 import { LayoutContext } from './context/LayoutContext'
 import { ChatContext } from './context/ChatContext'
 import { useState, useEffect } from 'react'
-import NewMessageIcon from './components/newMessageIcon/NewMessageIcon';
 import NewMessageChat from './components/newMessageChat/NewMessageChat';
-import Stories from './containers/Stories/Stories';
 import Dashboard from './containers/Dashboard/Dashboard';
 import Profile from './containers/Profile/Profile';
 import { data } from './api/api'
@@ -64,7 +57,7 @@ const handleHideOverlay = () => {
 
   return (
     <Content>
-      <div style={{ width: '100%', height: '57px'}} />
+      <div style={{ width: '100%', height: '54px'}} />
       <LayoutContext.Provider value={{
         showOverlay: handleShowOverlay,
         hideOverlay: handleHideOverlay,

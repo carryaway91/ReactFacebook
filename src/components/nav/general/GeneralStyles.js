@@ -41,7 +41,7 @@ ${devices.notebook} {
 
 export const Title = styled.div`
     position: absolute;
-    bottom: -1.8rem;
+    bottom: -2rem;
     left: 2rem;
     padding: .2rem;
     font-size: .9em;

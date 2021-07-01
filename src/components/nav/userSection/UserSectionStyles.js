@@ -11,6 +11,7 @@ export const Nav = styled.ul`
     left: .8rem;
     padding-right: 1rem;
 
+  
     ${devices.xs} {
         padding: 0
     }

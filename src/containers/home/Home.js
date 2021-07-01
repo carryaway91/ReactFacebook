@@ -17,7 +17,7 @@ const Home = props => {
                     </PostContainer>
                         {
                             [...Array(3)].map((p, i) => (
-                                <Post user={props.friends && props.friends[i]} 
+                                <Post key={i} user={props.friends && props.friends[i]} 
                                 photo={Livia}
                                 />
                                 

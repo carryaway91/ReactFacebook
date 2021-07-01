@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react'
 import { Link, useParams } from "react-router-dom"
-import styled from "styled-components";
-import Photo from '../../img/ja.jpg'
 import PostContainer from "../../UI/postContainer/PostContainer";
 import Teta from '../../img/teta.jpg'
 import NewPost from "../../components/newPost/NewPost";
 import Post from "../../components/post/Post";
 import { data } from '../../api/api'
+import { Header, Content, Cover, ProfileCircle, FriendFrame, FrinedWrap } from './ProfileStyles';
 
 const Profile = props => {
     const { slug } = useParams()
@@ -75,12 +74,12 @@ const Profile = props => {
                         <p style={{ margin: '.3rem 0 1rem 0', color: "gray"}}>{currentUser && currentUser.friends.length} friends</p>
                         <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between'}}>
                             { currentUser && currentUser.friends.map(f => (
-                                <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '1rem'}}>
+                                <FrinedWrap>
                                     <Link to={`/profile/${f.slug}`} style={{ color: 'black', textDecoration: 'none'}}>
                                         <FriendFrame src={Teta} />   
-                                        <p style={{ margin: 0, fontWeight: 'bold', fontSize: '.7rem'}}>{ f.fName + ' ' + f.lName}</p>
+                                        <p style={{ margin: 0, fontWeight: 'bold', fontSize: '.7rem', wordWrap:'wrap'}}>{ f.fName + ' ' + f.lName}</p>
                                     </Link>
-                                </div>
+                                </FrinedWrap>
                                 ))}
                         </div>
                     </PostContainer>
@@ -108,43 +107,5 @@ const Profile = props => {
     );
 };
 
-const Header = styled.div`
-width: 940px;
-margin: 0 auto;
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column
-`
-
-const Content = styled.div`
-display: flex;
-width: 900px;
-margin: 0 auto
-`
-const Cover = styled.div`
-    position: relative;
-    width: 100%;
-    height: 347px;
-    border-radius: 0 0 .5rem .5rem;
-    background: linear-gradient(180deg, #fff 0%, #999 100%);
-`
-
-const ProfileCircle = styled.img`
-    width: 170px;
-    height: 170px;
-    border-radius: 50%;
-    border: 3px solid white;
-    position: absolute;
-    bottom: -20px;
-    left: calc(50% - 91px)
-`
-
-const FriendFrame = styled.img`
-    width: 101px;
-    height: 102px;
-    object-fit: cover;
-    border-radius: .5rem;
-`
 
 export default Profile;
