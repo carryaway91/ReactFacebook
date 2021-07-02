@@ -9,6 +9,7 @@ const UserCircle = props => {
     const [wasSeen, setWasSeen] = useState(false)
     
     useEffect(() => {
+        localStorage.setItem('seen', JSON.stringify([]))
         let arrayOfSeen = JSON.parse(localStorage.getItem('seen'))
         let includes = arrayOfSeen.includes(props.storyID && props.storyID.id)
         if(!includes) {

@@ -20,7 +20,7 @@ const Story = props => {
                 props.main && (
                     <Create>
                         <Plus>
-                            <span style={{ position: 'relative', bottom: '4px', left: '1px'}}>+</span>
+                            <span style={{ position: 'relative', bottom: '4px', left: '0px'}}>+</span>
                         </Plus>
                         <p>Create Story</p>
                     </Create>

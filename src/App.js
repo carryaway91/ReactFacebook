@@ -27,7 +27,6 @@ const App = () => {
 
     useEffect(() => {
       setUser(data.user)
-      localStorage.setItem('seen', JSON.stringify([]))
       let stories = []
       stories = data.user.friends.filter(f => f.story)
       setUsersWithStories(stories)
