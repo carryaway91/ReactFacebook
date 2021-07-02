@@ -6,9 +6,14 @@ const NewMessageChat = props => {
     return (
         <Container>
             <div style={{ display: 'flex', padding: '.5rem .5rem .2rem .5rem', justifyContent: 'space-between', position: 'relative'}}>
-                <div style={{display: 'flex'}}>
+                <div style={{display: 'flex', alignItems: 'center'}}>
                 <Link to={props.friend && `/profile/${props.friend.slug}`}>
-                    <img src={props.friend && props.friend.photo} width="35px" height="35px" style={{ objectFit:"cover", borderRadius: '50%'}}  />
+                    <img src={props.friend && props.friend.photo} style={{ width: '40px', height: '40px', objectFit: 'cover', borderRadius: '50%'}} />
+                    <div style={{ position: 'relative'}}>
+                        <div style={{ width: '10px', height: '10px', background: 'green', position: 'absolute', bottom: 0, right: 0,
+                        borderRadius: '50%', border: '2px solid white'
+                    }}></div>
+                    </div>
                 </Link>
                     <div style={{ marginLeft: '.5rem'}}>
                         <Link to={props.friend && `/profile/${props.friend.slug}`} style={{ textDecoration: 'none', color: 'black'}}>

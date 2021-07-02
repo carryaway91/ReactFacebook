@@ -5,7 +5,7 @@ export const ContactItem = styled.li`
     display: flex;
     align-items: center;
     list-style-type: none;
-    padding: 0.5rem;
+    padding: 0.3rem  0.5rem;
     border-radius: .3rem;
     cursor: pointer;
     position: relative;

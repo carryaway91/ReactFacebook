@@ -19,7 +19,7 @@ const Post = props => {
             <PostContainer w="100%">
                 <div style={{ display: 'flex'}}>
                     <Link to={`/profile/${props.user && props.user.slug}`}>
-                        <UserCircle photo={props.user && props.user.photo} w="40px" online storyID={props.user && props.user.story} size="xs"/>
+                        <UserCircle photo={props.user && props.user.photo} w="32px" online storyID={props.user && props.user.story} size="xs"/>
                     </Link>
                     
                     <div style={{ diplay: 'flex', flexDirection: 'column', marginLeft: '.8rem'}}>
