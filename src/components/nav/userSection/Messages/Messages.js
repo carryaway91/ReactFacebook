@@ -1,6 +1,6 @@
-import styled from "styled-components"
 import { useState } from 'react'
 import Message from "./Message/Message"
+import { Arrow, Input } from './MessagesStyles'
 
 const Messages = props => {
     const [showSearch, setShowSearch] = useState(true)
@@ -27,33 +27,4 @@ const Messages = props => {
     )
 }
 
-const Input = styled.input`
-    padding: .5rem .5rem .5rem 2rem;
-    border-radius: 1rem;
-    background: #eee;
-    border: none;
-    outline: none;
-    font-size: 1rem;
-    transition: all .05s ease-in-out;
-    width: 90%;
-    left: -5px;
-    position: relative;
-
-
-    &:focus {
-        padding: .5rem;
-        width: 85.7%;
-        left: 10%
-    }
-`
-
-const Arrow = styled.svg`
-    left: -8px;
-    top: -1px;
-
-    &:hover {
-        cursor: pointer;
-        background: #ddd;
-    }
-`
 export default Messages
