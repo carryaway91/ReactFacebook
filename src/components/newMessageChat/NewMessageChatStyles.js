@@ -53,7 +53,7 @@ export const Close = styled.svg`
     export const Mini = styled.svg`
     border-radius: 50%;
     position: absolute;
-    top: 22%;
+    top: 12px;
     right: 12%;
 
     &:hover {

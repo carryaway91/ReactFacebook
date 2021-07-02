@@ -1,14 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import { CancelContainer } from './CancelStyles';
-const Cancel = () => {
+const Cancel = props => {
     return (
         <CancelContainer>
-            <Link to="/" style={{ textDecoration: 'none', color: 'white'}}>
+            <div onClick={() => props.history.goBack()}style={{ textDecoration: 'none', color: 'white'}}>
             +
-            </Link>
+            </div>
         </CancelContainer>
     );
 };
 
-export default Cancel;
+export default withRouter(Cancel);

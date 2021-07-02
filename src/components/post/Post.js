@@ -7,7 +7,8 @@ import Heart from '../interactionPanel/icons/Heart';
 import Laugh from '../interactionPanel/icons/Laugh';
 import InteractionPanel from '../interactionPanel/InteractionPanel';
 import World from './WorldSvg'
-import { Container, ProfilePhoto, Dot, ImageHolder, Image, EmojiContainer } from './PostStyles';
+import { Container, Dot, ImageHolder, Image, EmojiContainer } from './PostStyles';
+import UserCircle from '../userCircle/UserCircle';
 
 const Post = props => {
     const [commentSection, setCommentSection] = useState(false)
@@ -18,7 +19,7 @@ const Post = props => {
             <PostContainer w="100%">
                 <div style={{ display: 'flex'}}>
                     <Link to={`/profile/${props.user && props.user.slug}`}>
-                        <ProfilePhoto src={props.user && props.user.photo} />
+                        <UserCircle photo={props.user && props.user.photo} w="40px" online storyID={props.user && props.user.story} size="xs"/>
                     </Link>
                     
                     <div style={{ diplay: 'flex', flexDirection: 'column', marginLeft: '.8rem'}}>

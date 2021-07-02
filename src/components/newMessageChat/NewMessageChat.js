@@ -1,15 +1,14 @@
 import UserCircle from "../userCircle/UserCircle"
-import Photo from '../../img/teta.jpg'
 import { Link } from "react-router-dom"
 import { Container, MyMessage, ContactMessage, Close, Mini } from './NewMessageChatStyles'
 
 const NewMessageChat = props => {
     return (
         <Container>
-            <div style={{ display: 'flex', padding: '.5rem', justifyContent: 'space-between', position: 'relative'}}>
+            <div style={{ display: 'flex', padding: '.5rem .5rem .2rem .5rem', justifyContent: 'space-between', position: 'relative'}}>
                 <div style={{display: 'flex'}}>
                 <Link to={props.friend && `/profile/${props.friend.slug}`}>
-                    <UserCircle online w="35px" photo={props.friend && props.friend.photo} />
+                    <img src={props.friend && props.friend.photo} width="35px" height="35px" style={{ objectFit:"cover", borderRadius: '50%'}}  />
                 </Link>
                     <div style={{ marginLeft: '.5rem'}}>
                         <Link to={props.friend && `/profile/${props.friend.slug}`} style={{ textDecoration: 'none', color: 'black'}}>
@@ -30,7 +29,7 @@ const NewMessageChat = props => {
                     </MyMessage>
                     <div style={{ display: 'flex', marginTop: '.5rem' }}>
                         <div style={{ display: 'flex', alignItems: 'flex-end', marginRight: '.2rem' }}>
-                            <UserCircle w="25px" photo={Photo} />
+                            <UserCircle w="25px" photo={props.friend && props.friend.photo} />
                         </div>
                         <ContactMessage>
                             Message from { props.friend && props.friend.fName + ' ' + props.friend.lName } to me

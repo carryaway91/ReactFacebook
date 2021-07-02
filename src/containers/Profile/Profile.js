@@ -6,6 +6,7 @@ import NewPost from "../../components/newPost/NewPost";
 import Post from "../../components/post/Post";
 import { data } from '../../api/api'
 import { Header, Content, Cover, ProfileCircle, Img, FriendFrame, FrinedWrap } from './ProfileStyles';
+import UserCircle from '../../components/userCircle/UserCircle';
 
 const Profile = props => {
     const { slug } = useParams()
@@ -33,7 +34,7 @@ const Profile = props => {
                 <Header>
                     <Cover>
                         <ProfileCircle>
-                            <Img src={currentUser && currentUser.photo} />
+                            <UserCircle size="xl" withoutStory={currentUser && currentUser.story ? false : true} photo={currentUser && currentUser.photo} w="170px" online storyID={currentUser && currentUser.story}  />
                          </ProfileCircle>    
                     </Cover>
                     <h1>{ currentUser && currentUser.fName + ' ' + currentUser.lName }</h1>

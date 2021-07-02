@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
-import styled from "styled-components";
-import Photo from '../../img/teta.jpg'
 import UserCircle from "../userCircle/UserCircle";
+import { PostContainer } from "./UserContextWindowStyles";
 
 const UserContextWindow = props => {
     return (
         <PostContainer onMouseEnter={props.show} onMouseLeave={props.hide} style={{ top: props.top}}>
             <Link to={ props.user && `/profile/${props.user.slug}`}>
-                <UserCircle w="90px" photo={props.user.photo} />
+                <UserCircle size="md" w="90px" photo={props.user.photo} online storyID={props.user && props.user.story} />
             </Link>
             
             <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', marginLeft: '.5rem'}}>
@@ -27,19 +26,5 @@ const UserContextWindow = props => {
         </PostContainer>
     );
 };
-
-const PostContainer = styled.div`
-    display: flex;
-    align-items: center;
-    position: absolute;
-    width: 320px;
-    left: -21.9rem;
-    padding: 1rem;
-    right: 300px;
-    background: white;
-    border-radius: .3rem;
-    box-shadow: 1px 0 3px 0 lightgray;
-    z-index: 100
-`
 
 export default UserContextWindow;
