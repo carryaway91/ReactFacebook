@@ -31,7 +31,7 @@ export const Cover = styled.div`
     background: linear-gradient(180deg, #fff 0%, #999 100%);
 `
 
-export const ProfileCircle = styled.img`
+export const ProfileCircle = styled.div`
     width: 170px;
     height: 170px;
     border-radius: 50%;
@@ -39,6 +39,13 @@ export const ProfileCircle = styled.img`
     position: absolute;
     bottom: -20px;
     left: calc(50% - 91px)
+`
+
+export const Img = styled.img`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 `
 
 export const FriendFrame = styled.img`

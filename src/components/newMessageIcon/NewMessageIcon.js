@@ -1,30 +1,33 @@
-import styled from "styled-components"
+import { useState } from 'react'
 import Message from '../../img/message.png'
-const NewMessageIcon = () => {
+import { Icon, Img, Close } from './NewMessageIconStyles'
+
+const NewMessageIcon = props => {
+    const [show, setShow] = useState(false)
+    
+    const closeChat = e => {
+        e.stopPropagation()
+        props.close()
+    }
     return (
-        <Icon>
-            <img src={Message} style={{ objectFit: 'cover'}} width="20" height="20"/>
+        <Icon {...props} onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)} onClick={props.open}>
+            {
+                props.friend && (
+                    <div style={{ position: 'relative'}}>
+                        {
+                            show && (
+                                <Close onClick={e => closeChat(e)}>
+                                    <span>+</span>
+                                </Close>
+                            )
+                        }
+                    </div>
+                )   
+            }
+            <Img main={props.main} src={props.friend ? props.friend.photo : Message} width="20" height="20"/>
         </Icon>
     )
 }
 
-const Icon = styled.div`
-    width: 40px;
-    height: 40px;
-    background: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    bottom: 1rem;
-    right: 2rem;
-    border-radius: 50%;
-    padding: .5rem;
-    transition: all .2s ease-in-out;
-    
-    &:hover {
-        background: #ddd;
-        cursor: pointer;
-    }
-`
+
 export default NewMessageIcon

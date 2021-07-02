@@ -5,7 +5,7 @@ import Teta from '../../img/teta.jpg'
 import NewPost from "../../components/newPost/NewPost";
 import Post from "../../components/post/Post";
 import { data } from '../../api/api'
-import { Header, Content, Cover, ProfileCircle, FriendFrame, FrinedWrap } from './ProfileStyles';
+import { Header, Content, Cover, ProfileCircle, Img, FriendFrame, FrinedWrap } from './ProfileStyles';
 
 const Profile = props => {
     const { slug } = useParams()
@@ -32,7 +32,9 @@ const Profile = props => {
             <div style={{ width: '100%', background: 'white', borderBottom: '1px solid lightgray'}}>
                 <Header>
                     <Cover>
-                        <ProfileCircle src={currentUser && currentUser.photo} />
+                        <ProfileCircle>
+                            <Img src={currentUser && currentUser.photo} />
+                         </ProfileCircle>    
                     </Cover>
                     <h1>{ currentUser && currentUser.fName + ' ' + currentUser.lName }</h1>
                 </Header>

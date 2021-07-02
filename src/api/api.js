@@ -1,9 +1,19 @@
 import UserPhoto from '../img/ja.jpg'
 import Livia from '../img/teta.jpg'
+import Teta from '../img/baba.jpg'
 import Mountains from '../img/stories/mountains.jpg'
 import Lake from '../img/stories/lake.jpg'
 import Mlyn from '../img/stories/mlyn.jpg'
 import Sakura from '../img/stories/sakura.jpg'
+import woman0 from '../img/0.jpg'
+import woman1 from '../img/1.jpg'
+import woman2 from '../img/2.jpeg'
+import woman3 from '../img/3.png'
+import woman4 from '../img/4.jpg'
+import woman5 from '../img/5.jpg'
+import woman6 from '../img/6.jpg'
+import woman7 from '../img/7.jpg'
+import woman8 from '../img/8.jpg'
 
 export const data = {
     user: {
@@ -24,7 +34,7 @@ export const data = {
                 slug: 'livia-mala',
                 fName: 'Livia',
                 lName: 'Mala',
-                photo: Livia,
+                photo: woman0,
                 work: 'Restaurant',
                 school: 'University of Presov',
                 from: 'Vienna, Austria',
@@ -43,7 +53,7 @@ export const data = {
                 slug: 'aneta-nova',
                 fName: 'Aneta',
                 lName: 'Nova',
-                photo: Livia,
+                photo: woman1,
                 work: 'Predavacka',
                 school: 'Stredna priemyselna',
                 from: 'Vienna, Austria',
@@ -60,7 +70,7 @@ export const data = {
                 slug: 'anna-zahunanska',
                 fName: 'Anna',
                 lName: 'Zahunanska',
-                photo: Livia,
+                photo: woman2,
                 work: 'Nurse',
                 school: 'UKF Nitra',
                 from: 'Vienna, Austria',
@@ -76,7 +86,7 @@ export const data = {
                 slug: 'katka-anrejska',
                 fName: 'Katka',
                 lName: 'Andrejska',
-                photo: Livia,
+                photo: woman3,
                 work: 'Hosteska',
                 school: 'Technical University',
                 from: 'Vienna, Austria',
@@ -92,7 +102,7 @@ export const data = {
                 slug: 'lucia-malackova',
                 fName: 'Lucia',
                 lName: 'Malackova',
-                photo: Livia,
+                photo: woman4,
                 work: 'Economist',
                 school: 'Technical University',
                 from: 'Vienna, Austria',
@@ -107,7 +117,7 @@ export const data = {
                 slug: 'sona-zavodna',
                 fName: 'Zavodna',
                 lName: 'Stredna',
-                photo: Livia,
+                photo: woman5,
                 work: 'English Teacher',
                 school: 'UPJS',
                 from: 'Vienna, Austria',
@@ -122,7 +132,7 @@ export const data = {
                 slug: 'beata-bohusova',
                 fName: 'Beata',
                 lName: 'Bohusova',
-                photo: Livia,
+                photo: woman6,
                 work: 'Translator',
                 school: 'University of Presov',
                 from: 'Vienna, Austria',
@@ -137,7 +147,7 @@ export const data = {
                 slug: 'theresia-hodasova',
                 fName: 'Theresia',
                 lName: 'Hodasova',
-                photo: Livia,
+                photo: woman7,
                 work: 'Nurse',
                 school: 'UPJS',
                 from: 'Vienna, Austria',
@@ -152,7 +162,7 @@ export const data = {
                 slug: 'maria-zakutna',
                 fName: 'Maria',
                 lName: 'Zakutna',
-                photo: Livia,
+                photo: woman8,
                 work: 'Zverolekarka',
                 school: 'Veterinarna Vysoka Skola v Kosiciach',
                 from: 'Vienna, Austria',

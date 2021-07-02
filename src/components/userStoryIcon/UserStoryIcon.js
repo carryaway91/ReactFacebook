@@ -1,31 +1,25 @@
-import styled from 'styled-components'
-
+import { Icon, Img } from "./UserStoryIconStyles"
+import { useState, useEffect } from "react"
 
 const UserStoryIcon = props => {
+    const [wasSeen, setWasSeen] = useState(false)
+
+    useEffect(() => {
+        let includes = props.seen.includes(props.storyID)
+        if(!includes) {
+            setWasSeen(false)
+        } else {
+            setWasSeen(true)
+        }
+    }, [props])
+    
     return (
-        <Icon>
+        <Icon seen={wasSeen}>
             <Img src={props.face && props.face} />
         </Icon>
     )
 }
 
 
-const Icon = styled.div`
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    z-index: 3;
-    border-radius: 50%;
-    border: 4px solid #0f92f3;
-    top: .7rem;
-    left: .7rem;
-    cursor: pointer
-`
 
-const Img = styled.img`
-    object-fit: cover;
-    border-radius: 50%;
-    width: 100%;
-    height: 100%
-`
 export default UserStoryIcon

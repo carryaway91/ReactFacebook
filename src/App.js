@@ -4,6 +4,7 @@ import { LayoutContext } from './context/LayoutContext'
 import { ChatContext } from './context/ChatContext'
 import { useState, useEffect } from 'react'
 import NewMessageChat from './components/newMessageChat/NewMessageChat';
+import NewMessageIcon from './components/newMessageIcon/NewMessageIcon';
 import Dashboard from './containers/Dashboard/Dashboard';
 import Profile from './containers/Profile/Profile';
 import { data } from './api/api'
@@ -15,9 +16,11 @@ const App = () => {
     const [friend, setFriend] = useState()
     const [showChat, setShowChat] = useState(false)
     const [showLayout, setShowLayout] = useState(false)
+    const [mini, setMini] = useState(false)
 
     useEffect(() => {
       setUser(data.user)
+      localStorage.setItem('seen', JSON.stringify([]))
     }, [])
 
     useEffect(() => {
@@ -48,12 +51,29 @@ const handleHideOverlay = () => {
 
   const handleOpenChat = friend => {
     setShowChat(true)
+    setMini(false)
     setFriend(friend)
     let window = document.getElementById('context')
     if(window) {
       window.style.display = 'none'
     }
   }
+
+  const handleCloseChat = () => {
+    setShowChat(false)
+    setMini(false)
+  }
+
+  const handleMinimizeChat = () => {
+    setShowChat(false)
+    setMini(true)
+  }
+
+  const handleUnminimizeChat = () => {
+    setShowChat(true)
+    setMini(false)
+  }
+
 
   return (
     <Content>
@@ -80,8 +100,11 @@ const handleHideOverlay = () => {
         {
             showLayout && <Layout onClick={() => setShowLayout(false)} />
         }
-        { showChat && <NewMessageChat friend={friend} close={() => setShowChat(false)} /> }
-
+        { showChat && <NewMessageChat friend={friend} close={handleCloseChat} minimize={handleMinimizeChat}/> }
+        <NewMessageIcon main/>
+        {
+          mini && <NewMessageIcon friend={friend} close={() => setMini(false)} open={handleUnminimizeChat}/>
+        }
 
     </Content>
   );

@@ -1,7 +1,7 @@
 import UserCircle from "../userCircle/UserCircle"
 import Photo from '../../img/teta.jpg'
 import { Link } from "react-router-dom"
-import { Container, MyMessage, ContactMessage, SVG } from './NewMessageChatStyles'
+import { Container, MyMessage, ContactMessage, Close, Mini } from './NewMessageChatStyles'
 
 const NewMessageChat = props => {
     return (
@@ -18,12 +18,13 @@ const NewMessageChat = props => {
                         <p style={{ margin: 0, fontSize: '.7rem'}}>Active now</p>
                     </div>
                 </div>
-                    <SVG onClick={props.close} width="26px" height="26px" viewBox="-4 -4 24 24"><line x1="2" x2="14" y1="2" y2="14" stroke-linecap="round" stroke-width="2" stroke="#bec2c9"></line><line x1="2" x2="14" y1="14" y2="2" stroke-linecap="round" stroke-width="2" stroke="#bec2c9"></line></SVG>
+                    <Mini onClick={props.minimize} width="26px" height="26px" viewBox="-4 -4 24 24"><line x1="2" x2="14" y1="8" y2="8" stroke-linecap="round" stroke-width="2" stroke="#bec2c9"></line></Mini>
+                    <Close onClick={props.close} width="26px" height="26px" viewBox="-4 -4 24 24"><line x1="2" x2="14" y1="2" y2="14" stroke-linecap="round" stroke-width="2" stroke="#bec2c9"></line><line x1="2" x2="14" y1="14" y2="2" stroke-linecap="round" stroke-width="2" stroke="#bec2c9"></line></Close>
             </div>
             <div style={{height: '1px', background: 'lightgray'}} />
             <div style={{ display: 'flex', flexDirection: 'column'}}>
 
-                <div style={{ overflowY: 'scroll', padding: '0 .5rem', height: '340px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end'}}>
+                <div style={{ padding: '0 .5rem', height: '340px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end'}}>
                     <MyMessage>
                         My message for { props.friend && props.friend.fName + ' ' + props.friend.lName }
                     </MyMessage>

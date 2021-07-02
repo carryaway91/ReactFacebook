@@ -45,7 +45,7 @@ const Dashboard = props => {
                 <Switch>
                     <Route path="/story/:id" component={Stories} />
                     <Route path="/bookmarks" render={() => <Bookmarks user={props.user} />}/>
-                    <Route path="/friends" component={Friends}/>
+                <Route path="/friends" component={Friends}/>
                     <Route path="/pages" component={Pages}/>
                     <Route path="/watch" component={Watch}/>
                     <Route path="/groups" component={Groups}/>

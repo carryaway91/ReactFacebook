@@ -7,7 +7,7 @@ const UserContextWindow = props => {
     return (
         <PostContainer onMouseEnter={props.show} onMouseLeave={props.hide} style={{ top: props.top}}>
             <Link to={ props.user && `/profile/${props.user.slug}`}>
-                <UserCircle w="90px" photo={Photo} />
+                <UserCircle w="90px" photo={props.user.photo} />
             </Link>
             
             <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', marginLeft: '.5rem'}}>

@@ -39,14 +39,28 @@ export const ContactMessage = styled.div`
 
 `
 
-export const SVG = styled.svg`
+export const Close = styled.svg`
     border-radius: 50%;
-    fill: blue;
     position: relative;
     top: 4px;
+    
+    &:hover {
+        background: #ddd;
+        cursor: pointer
+    }
+    `
+    
+    export const Mini = styled.svg`
+    border-radius: 50%;
+    position: absolute;
+    top: 22%;
+    right: 12%;
 
     &:hover {
         background: #ddd;
         cursor: pointer
+    }
+    ${devices.xs} {
+        right: 15%
     }
 `

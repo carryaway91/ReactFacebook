@@ -10,7 +10,7 @@ const Nav = props => {
                 <HomeNav />
             </div>
             <GeneralWrap>
-                <General />
+                <General main/>
             </GeneralWrap>
             <UserSection user={props.user} />
         </Navigation>

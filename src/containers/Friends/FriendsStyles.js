@@ -36,6 +36,11 @@ export const ContactWrap = styled.div`
         }
     }
 
+    @media(max-width: 530px) {
+        max-width: 30%
+    }
+
+
     @media(max-width: 370px) {
         font-size: .7rem
     }

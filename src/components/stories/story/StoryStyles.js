@@ -20,11 +20,13 @@ export const Container = styled.div`
 
     ${devices.xs} {
         width: 24%;
-        height: auto;
         &:last-child {
             display: none
         };
-   
+    }
+
+    @media(max-width: 400px) {
+        height: 150px
     }
     `
     
@@ -58,6 +60,12 @@ font-size: .8rem;
 &:hover {
     filter: grayscale(20%);
 }
+
+p {
+    @media(max-width: 300px) {
+        display: none
+    }
+}
 `
 
 export const Plus = styled.div`
@@ -76,6 +84,10 @@ export const Plus = styled.div`
     color: white;
     font-weight: 300;
     border: 4px solid white;
+
+    @media(max-width: 400px) {
+        left: calc(65% - 30px)
+    }
 `
 
 export const Layout = styled.div`
