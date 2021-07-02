@@ -19,7 +19,7 @@ const AsideNav = props => {
     return (
         <Menu>
             <Link to={props.user && `/profile/${props.user.slug}`}>
-                <UserCircle w="30px" photo={ props.user && props.user.photo} />
+                <UserCircle w="27px" photo={ props.user && props.user.photo} />
                 <span style={{ marginLeft: '.5rem'}}>{ props.user && props.user.fName + ' ' + props.user.lName }</span>
             </Link>
             <Link>
