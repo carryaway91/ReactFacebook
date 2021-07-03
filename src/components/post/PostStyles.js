@@ -1,7 +1,8 @@
 import styled from "styled-components"
 import { devices } from "../../media"
 
-export const Container = styled.div`
+export const Container = styled.div`    
+    width: 100%;
     margin-bottom: 1rem;
     display: flex;
     flex-direction: column;
@@ -23,13 +24,16 @@ export const ProfilePhoto = styled.img`
 export const Dot = styled.span`
     position: relative;
     bottom: 3px;
-    margin: 0 .2rem
-`
-export const ImageHolder = styled.div`
+    margin: 0 .2rem;
+    `
+    export const ImageHolder = styled.div`
     position: relative;
     top: -7px;
     width: calc(100% + 2rem);
     left: -1rem;
+    background: black;
+    display: flex;
+    justify-content: center;
 `
 
 export const Image = styled.img`
