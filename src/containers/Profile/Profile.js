@@ -97,7 +97,7 @@ const Profile = props => {
                         )
                     }
 
-                    { [...Array(4)].map(() => (
+                    { [...Array(1)].map(() => (
                         <div style={{ marginBottom: '1rem'}}>
                             <Post user={currentUser}/>
                         </div>

@@ -29,6 +29,7 @@ border-radius: .5rem;
 width: 300px;
 height: 80vh;
 z-index: 200000000000000000;
+background: white;
 animation: ${storyAnimation} .5s;
 
 ${devices.mobile} {
@@ -44,7 +45,7 @@ export const Img = styled.img`
 border-radius: .5rem;
 width: 100%;
 height: 100%;
-object-fit: cover
+object-fit: contain
 `
 export const CancelContainer = styled.div`
     z-index: 0;

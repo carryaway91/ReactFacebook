@@ -31,16 +31,11 @@ const Post = props => {
                    </div>
                 </div>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
-                    et dolore magna aliqua. In nulla posuere sollicitudin aliquam ultrices sagittis orci. Nunc aliquet 
-                    bibendum enim facilisis gravida. Commodo nulla facilisi nullam vehicula. Iaculis eu non diam phasellus 
-                    vestibulum lorem sed risus ultricies. In hendrerit gravida rutrum quisque non tellus orci ac. Morbi leo urna 
-                    molestie at elementum. Ipsum dolor sit amet consectetur adipiscing elit. In mollis nunc sed id. Eros donec ac odio 
-                    tempor orci dapibus ultrices in iaculis.
+                    { props.user && props.user.posts[0].text}
                 </p>
                 <ImageHolder>
                     {
-                        <Image src="https://images.unsplash.com/photo-1612151855475-877969f4a6cc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aGQlMjBpbWFnZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80" />
+                        <Image src={props.user && props.user.posts[0].photo} />
                     }
                 </ImageHolder>
                 {

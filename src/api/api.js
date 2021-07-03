@@ -17,12 +17,14 @@ import woman8 from '../img/8.jpg'
 
 export const data = {
     user: {
+        id: 1,
         slug: 'peter-babej',
         fName: 'Peter',
         lName: 'Babej',
         photo: UserPhoto,
         posts: [{
-            id: 1,
+            id: Math.floor(Math.random() * 1000000),
+            user_id: 1,
             text: 'This is my first post as Peter Babej',
             photo: '',
         }],
@@ -31,6 +33,7 @@ export const data = {
         from: 'Presov',
         friends: [
             {
+                id: 2,
                 slug: 'livia-mala',
                 fName: 'Livia',
                 lName: 'Mala',
@@ -39,9 +42,10 @@ export const data = {
                 school: 'University of Presov',
                 from: 'Vienna, Austria',
                 posts: [{
-                    id: 1,
-                    text: 'This is my first post as Livia Mala',
-                    photo: '',
+                    id: Math.floor(Math.random() * 1000000),
+                    user_id: 2,
+                    text: 'This is my first post as Livia with a photo',
+                    photo: Sakura,
                 }],
                 friends: [],
                 story: {
@@ -50,6 +54,7 @@ export const data = {
                 }
             },
             {
+                id: 3,
                 slug: 'aneta-nova',
                 fName: 'Aneta',
                 lName: 'Nova',
@@ -58,15 +63,17 @@ export const data = {
                 school: 'Stredna priemyselna',
                 from: 'Vienna, Austria',
                 posts: [{
-                    id: 1,
-                    text: 'This is my first post as Livia Velka',
-                    photo: '',
+                    id: Math.floor(Math.random() * 1000000),
+                    user_id: 3,
+                    text: 'This is my first post as Aneta Nova with a photo',
+                    photo: Mountains,
                 }],
                 friends: [],
                 story: {id: 2, story: Sakura}
 
             },
             {
+                id: 4,
                 slug: 'anna-zahunanska',
                 fName: 'Anna',
                 lName: 'Zahunanska',
@@ -75,14 +82,16 @@ export const data = {
                 school: 'UKF Nitra',
                 from: 'Vienna, Austria',
                 posts: [{
-                    id: 1,
-                    text: 'This is my first post as Livia Stredna',
+                    id: Math.floor(Math.random() * 1000000),
+                    user_id: 4,
+                    text: 'This is my first post as Anna Zahunanska without a photo',
                     photo: '',
                 }],
                 friends: [],
                 story: {id: 45, story: Mlyn}
             },
             {
+                id: 5,
                 slug: 'katka-anrejska',
                 fName: 'Katka',
                 lName: 'Andrejska',
@@ -91,14 +100,16 @@ export const data = {
                 school: 'Technical University',
                 from: 'Vienna, Austria',
                 posts: [{
-                    id: 1,
-                    text: 'This is my first post as Livia Stredna',
+                    id: Math.floor(Math.random() * 1000000),
+                    user_id: 5,
+                    text: 'This is my first post as Katka Andrejska without a photo',
                     photo: '',
                 }],
                 friends: [],
                 story: {id: 3, story: Lake}
             },
             {
+                id: 6,
                 slug: 'lucia-malackova',
                 fName: 'Lucia',
                 lName: 'Malackova',
@@ -107,28 +118,32 @@ export const data = {
                 school: 'Technical University',
                 from: 'Vienna, Austria',
                 posts: [{
-                    id: 1,
-                    text: 'This is my first post as Livia Stredna',
+                    id: Math.floor(Math.random() * 1000000),
+                    user_id: 6,
+                    text: 'This is my first post as Lucia Malackova without a photo',
                     photo: '',
                 }],
                 friends: []
             },
             {
+                id: 7,
                 slug: 'sona-zavodna',
-                fName: 'Zavodna',
-                lName: 'Stredna',
+                fName: 'Sona',
+                lName: 'Zavodna',
                 photo: woman5,
                 work: 'English Teacher',
                 school: 'UPJS',
                 from: 'Vienna, Austria',
                 posts: [{
-                    id: 1,
-                    text: 'This is my first post as Livia Stredna',
-                    photo: '',
+                    id: Math.floor(Math.random() * 1000000),
+                    user_id: 7,
+                    text: 'This is my first post as Sona Zavodna with photo',
+                    photo: Lake,
                 }],
                 friends: []
             },
             {
+                id: 8,
                 slug: 'beata-bohusova',
                 fName: 'Beata',
                 lName: 'Bohusova',
@@ -137,13 +152,15 @@ export const data = {
                 school: 'University of Presov',
                 from: 'Vienna, Austria',
                 posts: [{
-                    id: 1,
-                    text: 'This is my first post as Livia Stredna',
-                    photo: '',
+                    id: Math.floor(Math.random() * 1000000),
+                    user_id: 8,
+                    text: 'This is my first post as Beata Bohusova with photo',
+                    photo: Mlyn,
                 }],
                 friends: []
             },
             {
+                id: 9,
                 slug: 'theresia-hodasova',
                 fName: 'Theresia',
                 lName: 'Hodasova',
@@ -152,13 +169,15 @@ export const data = {
                 school: 'UPJS',
                 from: 'Vienna, Austria',
                 posts: [{
-                    id: 1,
-                    text: 'This is my first post as Livia Stredna',
+                    id: Math.floor(Math.random() * 1000000),
+                    user_id: 9,
+                    text: 'This is my first post as Theresia Hodasova without a photo',
                     photo: '',
                 }],
                 friends: []
             },
             {
+                id: 10,
                 slug: 'maria-zakutna',
                 fName: 'Maria',
                 lName: 'Zakutna',
@@ -167,8 +186,9 @@ export const data = {
                 school: 'Veterinarna Vysoka Skola v Kosiciach',
                 from: 'Vienna, Austria',
                 posts: [{
-                    id: 1,
-                    text: 'This is my first post as Livia Stredna',
+                    id: Math.floor(Math.random() * 1000000),
+                    user_id: 10,
+                    text: 'This is my first post as Maria Zakutna without a photo',
                     photo: '',
                 }],
                 friends: []

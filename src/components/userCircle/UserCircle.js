@@ -9,7 +9,6 @@ const UserCircle = props => {
     const [wasSeen, setWasSeen] = useState(false)
     
     useEffect(() => {
-        console.log(JSON.parse(localStorage.getItem('seen')))
         let arrayOfSeen = JSON.parse(localStorage.getItem('seen'))
         if(arrayOfSeen == null) {
             arrayOfSeen = []

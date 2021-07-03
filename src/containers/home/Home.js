@@ -4,8 +4,10 @@ import Stories from "../../components/stories/Stories"
 import Livia from '../../img/baba.jpg'
 import PostContainer from "../../UI/postContainer/PostContainer"
 import { Content, PostsContent } from "./Homestyles"
+import { data } from '../../api/api' 
 
 const Home = props => {
+    
 
     return (
             <Content>
@@ -16,7 +18,7 @@ const Home = props => {
                         <NewPost />
                     </PostContainer>
                         {
-                            [...Array(3)].map((p, i) => (
+                            props.friends && props.friends.map((p, i) => (
                                 <Post key={i} user={props.friends && props.friends[i]} 
                                 photo={Livia}
                                 />
