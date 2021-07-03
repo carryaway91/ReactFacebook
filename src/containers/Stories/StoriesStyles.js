@@ -18,9 +18,9 @@ justify-content: center;
 align-items: center;
 `
 
-const storyAnimation = keyframes`
-0% { height: 0px; width: 0px; }
-100% { width: 300px; height: 80vh }
+const storyAnimation = (width) => keyframes`
+    0% { height: 0px; width: 0px; }
+    100% { width: ${width}; height: 80vh }
 `
 export const Story = styled.div`
 position: relative;
@@ -30,8 +30,12 @@ width: 300px;
 height: 80vh;
 z-index: 200000000000000000;
 background: white;
-animation: ${storyAnimation} .5s;
+animation: ${storyAnimation('300px')} .5s;
 
+${devices.desktop} {
+    width: 580px;
+    animation: ${storyAnimation('580px')} .5s
+}
 ${devices.mobile} {
     left: 0;
 }

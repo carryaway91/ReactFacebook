@@ -79,7 +79,7 @@ const Profile = props => {
                             { currentUser && currentUser.friends.map(f => (
                                 <FrinedWrap>
                                     <Link to={`/profile/${f.slug}`} style={{ color: 'black', textDecoration: 'none'}}>
-                                        <FriendFrame src={Teta} />   
+                                        <FriendFrame src={f.photo} />   
                                         <p style={{ margin: 0, fontWeight: 'bold', fontSize: '.7rem', wordWrap:'wrap'}}>{ f.fName + ' ' + f.lName}</p>
                                     </Link>
                                 </FrinedWrap>
