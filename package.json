@@ -2,7 +2,7 @@
   "name": "react-practice",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://carryaway91.github.io/ReactFacebook/",
+  "homepage": "https://react-made-facebook.vercel.app/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.13.0",
     "@testing-library/react": "^11.2.7",

@@ -1,14 +1,22 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import Logo from '../../Logo/Logo'
 import './Loader.css'
 import { withRouter } from 'react-router'
 import { SearchBar, Search, Magnifier, InputMagnifier, MobileNav } from './HomeNavStyles'
 import NavLink from '../UI/link/Link'
+import { data } from '../../../api/api'
 
 const HomeNav = props => {
     const [showPanel, setShowPanel] = useState(false)
     const [showSpinner, setShowSpinner] = useState(false)
     const [inputValue, setInputValue] = useState('')
+    const [allUsers, setAllUsers] = useState([])
+
+    useEffect(() => {
+        data.user.friends.forEach(f => setAllUsers(prevState => {
+            return [...prevState, f.fName + ' ' + f.lName]
+        }))
+    },[])
 
     const search = useRef()
     const leftArrow = useRef()
